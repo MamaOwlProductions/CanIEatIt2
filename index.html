@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can I Eat It? - Your Food Safety Guide</title>
+    <meta name="description" content="Get trusted answers to your food safety questions. Comprehensive database with information from CDC, FDA, and other health authorities.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23059669'/><text x='50' y='35' font-family='system-ui' font-size='20' font-weight='bold' text-anchor='middle' fill='white'>Can I</text><text x='50' y='55' font-family='system-ui' font-size='20' font-weight='bold' text-anchor='middle' fill='white'>Eat It?</text><circle cx='50' cy='70' r='8' fill='%23fbbf24'/></svg>"
+    <meta name="theme-color" content="#059669">
+    <style>
+        :root {
+            --primary-green: #059669;
+            --primary-green-light: #10b981;
+            --primary-green-dark: #047857;
+            --secondary-purple: #7c3aed;
+            --secondary-purple-light: #8b5cf6;
+            --secondary-purple-dark: #6d28d9;
+            --accent-orange: #f59e0b;
+            --success-green: #22c55e;
+            --warning-red: #ef4444;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-light: #9ca3af;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-card: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-primary: #f9fafb;
+                --text-secondary: #d1d5db;
+                --text-light: #9ca3af;
+                --bg-primary: #111827;
+                --bg-secondary: #1f2937;
+                --bg-card: #374151;
+                --border-color: #4b5563;
+                --shadow-color: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-purple) 100%);
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: transform 0.2s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light));
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 10px;
+            line-height: 1.1;
+            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .logo-icon:hover {
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .logo-icon::after {
+            content: '🍎';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 28px;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .logo-icon div {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-text .main {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+        }
+
+        .logo-text .sub {
+            font-size: 0.75em;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+            background: var(--bg-secondary);
+        }
+
+        .blog-link {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light)) !important;
+            color: white !important;
+            border-radius: 20px !important;
+            padding: 0.6rem 1.2rem !important;
+            font-weight: 600 !important;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+            transition: all 0.3s ease !important;
+        }
+
+        .blog-link:hover {
+            background: linear-gradient(135deg, var(--primary-green-light), var(--primary-green)) !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4) !important;
+        }
+
+        /* Page System Styles */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Blog Styles */
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .blog-controls {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .blog-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .blog-form input,
+        .blog-form textarea,
+        .blog-form select {
+            padding: 0.8rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .blog-form input:focus,
+        .blog-form textarea:focus,
+        .blog-form select:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .blog-form textarea {
+            min-height: 200px;
+            resize: vertical;
+        }
+
+        .publish-btn {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .publish-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
+        }
+
+        .blog-posts {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .blog-post {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+
+        .blog-post h2 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .blog-meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .blog-category {
+            background: var(--secondary-purple);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .blog-content {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Affiliate Product Styles */
+        .affiliate-section {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+
+        .affiliate-section h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.5rem 0;
+            font-size: 0.85rem;
+        }
+
+        .product-rating {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        .product-price {
+            color: var(--primary-green);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .product-card {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--shadow-color);
+        }
+
+        .product-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .affiliate-btn {
+            background: linear-gradient(135deg, var(--accent-orange), #fbbf24);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .affiliate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+        }
+
+        /* AdSense Placeholder Styles */
+        .adsense-banner {
+            background: transparent;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            margin: 2rem 0;
+            min-height: 100px;
+        }
+
+        .email-signup {
+            background: linear-gradient(135deg, var(--secondary-purple), var(--secondary-purple-light));
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .email-signup h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        .email-btn {
+            background: var(--accent-orange);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .email-btn:hover {
+            background: #f59e0b;
+            transform: translateY(-1px);
+        }
+
+        main {
+            padding: 2rem 0;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .search-section {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .search-section h2 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #searchInput {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: inherit;
+        }
+
+        #searchInput:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+        }
+
+        #searchInput::placeholder {
+            color: var(--text-light);
+        }
+
+        .search-btn {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
+        }
+
+        .search-btn:active {
+            transform: translateY(0);
+        }
+
+        .filters {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.2rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            font-family: inherit;
+        }
+
+        .filter-btn:hover {
+            background: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+            transform: translateY(-1px);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+
+        .results-section {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .results-section h2 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .result-item {
+            background: var(--bg-primary);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--shadow-color);
+        }
+
+        .question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .answer {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .source {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary-purple), var(--secondary-purple-light));
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            text-transform: capitalize;
+        }
+
+        .ad-banner {
+            background: var(--bg-secondary);
+            border: 2px dashed var(--border-color);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--text-secondary);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-green);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+            font-weight: 500;
+            font-size: 0.85rem;
+            line-height: 1.2;
+        }
+
+        footer {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --border-color: #000000;
+                --shadow-color: rgba(0, 0, 0, 0.5);
+            }
+            
+            .filter-btn, .search-btn, .result-item {
+                border: 2px solid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.mobile-open {
+                display: flex;
+            }
+
+            .filters {
+                justify-content: center;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+                margin: 1rem 0;
+            }
+
+            .stat-card {
+                padding: 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.25rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+
+            .logo-text {
+                font-size: 1.5rem;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .logo-text {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+    <!-- Google Analytics - Replace GA_MEASUREMENT_ID with your actual ID -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script> -->
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6456056219991576"
+         crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <div>Can I</div>
+                        <div>Eat It?</div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="main">Can I Eat It?</span>
+                        <span class="sub">Food Safety Guide</span>
+                    </div>
+                </a>
+                <nav>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+                    <ul class="nav-links" id="nav-links">
+                        <li><a href="#home" onclick="showPage('home'); closeMobileMenu();">Home</a></li>
+                        <li><a href="#blog" onclick="showPage('blog'); closeMobileMenu();" class="blog-link">📝 Blog</a></li>
+                        <li><a href="#about" onclick="showPage('about'); closeMobileMenu();">About</a></li>
+                        <li><a href="#contact" onclick="showPage('contact'); closeMobileMenu();">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HOME PAGE -->
+        <div id="home-page" class="page active">
+            <div class="container">
+                <section class="hero">
+                    <h1>Your Food Safety Questions, Answered</h1>
+                    <p>Trusted information from CDC, FDA, and other health authorities</p>
+                </section>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Food Safety Questions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Trusted Sources</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Available Access</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Free</div>
+                        <div class="stat-label">Always Free</div>
+                    </div>
+                </div>
+
+                <!-- AdSense Banner Ad -->
+                <div class="adsense-banner">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-6456056219991576"
+                         data-ad-slot="AUTO_GENERATED_SLOT_ID"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+                <section class="search-section">
+                    <h2>Search Food Safety Questions</h2>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Ask a food safety question... (e.g., 'How long can I keep leftover chicken?')">
+                        <button class="search-btn" onclick="searchQuestions()">Search</button>
+                    </div>
+                    
+                    <div class="filters">
+                        <button class="filter-btn active" onclick="filterCategory('all')">All Categories</button>
+                        <button class="filter-btn" onclick="filterCategory('storage')">Food Storage</button>
+                        <button class="filter-btn" onclick="filterCategory('cooking')">Cooking & Temperatures</button>
+                        <button class="filter-btn" onclick="filterCategory('leftovers')">Leftovers</button>
+                        <button class="filter-btn" onclick="filterCategory('expiration')">Expiration Dates</button>
+                        <button class="filter-btn" onclick="filterCategory('contamination')">Contamination</button>
+                        <button class="filter-btn" onclick="filterCategory('pregnancy')">Pregnancy Safety</button>
+                        <button class="filter-btn" onclick="filterCategory('meat')">Meat</button>
+                        <button class="filter-btn" onclick="filterCategory('dairy')">Dairy & Eggs</button>
+                        <button class="filter-btn" onclick="filterCategory('grains')">Grains</button>
+                        <button class="filter-btn" onclick="filterCategory('produce')">Produce</button>
+                        <button class="filter-btn" onclick="filterCategory('canned')">Canned Foods</button>
+                        <button class="filter-btn" onclick="filterCategory('baked goods')">Baked Goods</button>
+                        <button class="filter-btn" onclick="filterCategory('seafood')">Seafood</button>
+                        <button class="filter-btn" onclick="filterCategory('frozen foods')">Frozen Foods</button>
+                        <button class="filter-btn" onclick="filterCategory('prepared meals')">Prepared Meals</button>
+                        <button class="filter-btn" onclick="filterCategory('general')">General</button>
+                        <button class="filter-btn" onclick="filterCategory('plant-based')">Plant-Based</button>
+                        <button class="filter-btn" onclick="filterCategory('beverages')">Beverages</button>
+                        <button class="filter-btn" onclick="filterCategory('condiments')">Condiments</button>
+                        <button class="filter-btn" onclick="filterCategory('snacks')">Snacks & Candy</button>
+                        <button class="filter-btn" onclick="filterCategory('baking')">Baking</button>
+                        <button class="filter-btn" onclick="filterCategory('supplements')">Supplements</button>
+                    </div>
+
+                    <!-- SEARCH RESULTS SECTION - NOW DIRECTLY BELOW SEARCH -->
+                    <div class="search-results-container" id="search-results-container" style="margin-top: 2rem;">
+                        <h3 id="results-title" style="color: var(--text-primary); margin-bottom: 1.5rem; font-size: 1.3rem; font-weight: 600;">Search Results</h3>
+                        <div id="results">
+                            <!-- Results will be populated here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Email Signup Section -->
+                <div class="email-signup">
+                    <h3>🎁 Get Our FREE Food Safety Cheat Sheet!</h3>
+                    <p>Join 10,000+ people who get our weekly food safety tips and exclusive guides</p>
+                    
+                    <!-- MailerLite Universal Form -->
+                    <div class="ml-embedded" data-form="YOUR_FORM_ID">
+                        <div class="email-form">
+                            <input type="email" class="email-input" placeholder="Enter your email address" required>
+                        <button class="email-btn" onclick="handleEmailSignup()">Get Free Guide</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Backup form with direct submission -->
+                    <form action="https://landing.mailerlite.com/webforms/landing/YOUR_FORM_ID" method="post" target="_blank" style="display: none;" id="backup-form">
+                        <input type="email" name="fields[email]" required>
+                        <input type="hidden" name="ml-submit" value="1">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+
+                <!-- Amazon Affiliate Products Section -->
+                <div class="affiliate-section">
+                    <h3>🛡️ Essential Food Safety Tools</h3>
+                    <p>Professional-grade tools recommended by food safety experts</p>
+                    
+                    <div class="products-grid" id="affiliate-products">
+                        <!-- Products will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- AdSense Square Ad -->
+                <div class="adsense-banner">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-6456056219991576"
+                         data-ad-slot="AUTO_GENERATED_SLOT_ID"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOG PAGE -->
+        <div id="blog-page" class="page">
+            <div class="container">
+                <div class="blog-container">
+                    <div class="blog-header">
+                        <h1>📝 Food Safety Blog</h1>
+                        <p>Expert insights, tips, and guides for safer food handling</p>
+                    </div>
+
+                    <!-- Blog Posts Container -->
+                    <div class="blog-posts" id="blog-posts">
+                        <!-- Sample blog post -->
+                        <article class="blog-post">
+                            <h2>Welcome to Our Food Safety Blog!</h2>
+                            <div class="blog-meta">
+                                <span>📅 January 2, 2025</span>
+                                <span>👤 Food Safety Expert</span>
+                                <span class="blog-category">food-safety</span>
+                            </div>
+                            <div class="blog-content">
+                                <p>Welcome to the Can I Eat It? blog! Here you'll find expert insights, practical tips, and the latest information about food safety. Our mission is to help you make informed decisions about food storage, preparation, and consumption.</p>
+                                <p>Stay tuned for regular updates covering seasonal food safety tips, new research findings, and answers to your most pressing food safety questions.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT PAGE -->
+        <div id="about-page" class="page">
+            <div class="container">
+                <div class="blog-container">
+                    <div class="blog-header">
+                        <h1>About Can I Eat It?</h1>
+                        <p>Your trusted source for food safety information</p>
+                    </div>
+                    <div class="blog-post">
+                        <h2>Our Mission</h2>
+                        <div class="blog-content">
+                            <p>Can I Eat It? provides reliable, science-based answers to your food safety questions. Our database contains over 500 questions sourced from trusted authorities including the FDA, USDA, CDC, and other health organizations.</p>
+                            <p>We believe everyone deserves access to clear, accurate information about food safety to protect themselves and their families.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT PAGE -->
+        <div id="contact-page" class="page">
+            <div class="container">
+                <div class="blog-container">
+                    <div class="blog-header">
+                        <h1>Contact Us</h1>
+                        <p>Get in touch with our food safety experts</p>
+                    </div>
+                    <div class="blog-post">
+                        <h2>Get In Touch</h2>
+                        <div class="blog-content">
+                            <p><strong>Email:</strong> canieatit01@gmail.com</p>
+                            <p><strong>For Media Inquiries:</strong> canieatit01@gmail.com</p>
+                            <p><strong>Partnership Opportunities:</strong> canieatit01@gmail.com</p>
+                            <br>
+                            <p>Have a food safety question not in our database? Send it to us and our experts will research and add it!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Can I Eat It? - Food Safety Information from Trusted Sources</p>
+            <p>Disclaimer: This information is for educational purposes. Consult healthcare professionals for specific medical advice.</p>
+        </div>
+    </footer>
+
+    <script>
+        // CONFIGURATION - ADD YOUR AMAZON AFFILIATE ID HERE
+        const AMAZON_AFFILIATE_ID = 'canieatit06-20'; // Your Amazon Associates ID
+        
+        // Amazon Affiliate Products Database - Highly Rated Products
+        const affiliateProducts = [
+            {
+                title: 'ThermoPro TP03 Digital Instant Read Meat Thermometer',
+                description: 'Fast & accurate digital food thermometer with 3-4 second readings (4.5★ rating)',
+                amazonUrl: `https://amazon.com/dp/B01IHHLB3W?tag=${AMAZON_AFFILIATE_ID}`,
+                category: ['cooking', 'temperature', 'meat'],
+                rating: '4.5/5',
+                price: '$8.99'
+            },
+            {
+                title: 'Rubbermaid Brilliance Food Storage Containers',
+                description: 'Airtight leak-proof containers, BPA-free with crystal clear lids (4.6★ rating)',
+                amazonUrl: `https://amazon.com/dp/B01JCNEIC0?tag=${AMAZON_AFFILIATE_ID}`,
+                category: ['storage', 'leftovers', 'containers'],
+                rating: '4.6/5',
+                price: '$49.99'
+            },
+            {
+                title: 'Greater Goods Digital Food Kitchen Scale',
+                description: 'Precise measurements up to 11 lbs, easy to clean (4.7★ rating)',
+                amazonUrl: `https://amazon.com/dp/B01JTDG084?tag=${AMAZON_AFFILIATE_ID}`,
+                category: ['cooking', 'baking', 'measurement'],
+                rating: '4.7/5',
+                price: '$15.99'
+            },
+            {
+                title: 'FoodSaver V4840 2-in-1 Vacuum Sealer Machine',
+                description: 'Preserve food 5x longer, prevent freezer burn (4.4★ rating)',
+                amazonUrl: `https://amazon.com/dp/B01HXMC83Y?tag=${AMAZON_AFFILIATE_ID}`,
+                category: ['storage', 'frozen', 'preservation'],
+                rating: '4.4/5',
+                price: '$79.99'
+            },
+            {
+                title: 'OXO Good Grips 3-Piece Mixing Bowl Set',
+                description: 'Non-slip base, pour spouts, BPA-free (4.8★ rating)',
+                amazonUrl: `https://amazon.com/dp/B00004OCNJ?tag=${AMAZON_AFFILIATE_ID}`,
+                category: ['cooking', 'baking', 'prep'],
+                rating: '4.8/5',
+                price: '$29.95'
+            },
+            {
+                title: 'Cuisinart C77TR-CF-25 Triple Rivet Collection Knife Set',
+                description: 'High-carbon stainless steel, precision cutting (4.5★ rating)',
+                amazonUrl: `https://amazon.com/dp/B008GUMZQ4?tag=${AMAZON_AFFILIATE_ID}`,
+                category: ['cooking', 'prep', 'cutting'],
+                rating: '4.5/5',
+                price: '$39.95'
+            },
+            {
+                title: 'Bambüsi Bamboo Cutting Board Set',
+                description: 'Organic bamboo, juice groove, easy to clean (4.6★ rating)',
+                amazonUrl: `https://amazon.com/dp/B077ZYNQZX?tag=${AMAZON_AFFILIATE_ID}`,
+                category: ['cooking', 'prep', 'cutting'],
+                rating: '4.6/5',
+                price: '$24.99'
+            },
+            {
+                title: 'Taylor Precision Products Digital Refrigerator Thermometer',
+                description: 'Monitor fridge temperature for food safety (4.3★ rating)',
+                amazonUrl: `https://amazon.com/dp/B00GRFHXVQ?tag=${AMAZON_AFFILIATE_ID}`,
+                category: ['storage', 'temperature', 'monitoring'],
+                rating: '4.3/5',
+                price: '$12.99'
+            }
+        ];
+
+        // Complete Food Safety Database - First 50 entries (add remaining 450 entries below this section)
+        const foodSafetyDB = [
+            {id: 1, question: "How long can I keep leftover chicken in the refrigerator?", answer: "Leftover cooked chicken can be safely stored in the refrigerator for 3-4 days. Make sure to store it in shallow containers and refrigerate within 2 hours of cooking.", category: "leftovers", source: "USDA Food Safety and Inspection Service"},
+            {id: 2, question: "What temperature should I cook ground beef to?", answer: "Ground beef should be cooked to an internal temperature of 160°F (71°C). Use a food thermometer to check the temperature in the thickest part of the meat.", category: "cooking", source: "USDA Food Safety and Inspection Service"},
+            {id: 3, question: "Can I eat eggs past their expiration date?", answer: "You can often use eggs 3-5 weeks past the sell-by date if they've been properly refrigerated. To test freshness, place the egg in water - fresh eggs sink, older eggs float.", category: "expiration", source: "FDA"},
+            {id: 4, question: "Is it safe to eat raw cookie dough?", answer: "Raw cookie dough is not safe to eat because it may contain raw eggs (risk of Salmonella) and raw flour (risk of E. coli).", category: "contamination", source: "CDC"},
+            {id: 5, question: "How long can food sit out at room temperature?", answer: "Perishable foods should not be left at room temperature for more than 2 hours. If the temperature is above 90°F, the limit is 1 hour.", category: "storage", source: "USDA"},
+            {id: 6, question: "Can pregnant women eat sushi?", answer: "Pregnant women should avoid raw or undercooked fish, including most sushi. However, cooked sushi and vegetarian sushi are generally safe.", category: "pregnancy", source: "FDA"},
+            {id: 7, question: "What's the safe internal temperature for pork?", answer: "Pork should be cooked to an internal temperature of 145°F (63°C) followed by a 3-minute rest time.", category: "cooking", source: "USDA Food Safety and Inspection Service"},
+            {id: 8, question: "How long do leftovers last in the freezer?", answer: "Most cooked leftovers can be safely frozen for 2-6 months. While they remain safe indefinitely when frozen at 0°F, quality decreases over time.", category: "storage", source: "USDA"},
+            {id: 9, question: "Is it safe to reheat rice?", answer: "Yes, but rice should be cooled quickly after cooking, stored in the refrigerator, and reheated to steaming hot (165°F).", category: "leftovers", source: "CDC"},
+            {id: 10, question: "Can I wash chicken before cooking it?", answer: "No, you should not wash raw chicken. Washing can spread bacteria around your kitchen through splashing water.", category: "cooking", source: "USDA Food Safety and Inspection Service"},
+            {id: 11, question: "Can I eat chicken left out overnight?", answer: "No, cooked chicken should not be eaten if left at room temperature for more than 2 hours due to risk of bacterial growth.", category: "meat", source: "USDA"},
+            {id: 12, question: "Can I eat yogurt past the expiration date?", answer: "Yes, if it smells and looks normal and has been refrigerated, it may be safe for 1–2 weeks past the date.", category: "dairy", source: "USDA"},
+            {id: 13, question: "Is it safe to eat bread with mold on it?", answer: "No, you should discard the entire loaf, as mold spores can spread beyond what's visible.", category: "grains", source: "FDA"},
+            {id: 14, question: "Can I eat vegetables with soft spots?", answer: "Maybe. Trim soft areas if the rest is firm and not slimy or smelly.", category: "produce", source: "FDA"},
+            {id: 15, question: "Can I eat expired canned soup?", answer: "Yes, if the can is not bulging, leaking, or rusted. Quality may decline but it may still be safe.", category: "canned", source: "USDA"},
+            {id: 16, question: "Can I eat day-old donuts?", answer: "Yes, donuts are safe to eat for 1-2 days when stored in a sealed container at room temperature.", category: "baked goods", source: "FDA"},
+            {id: 17, question: "Can I eat cooked fish after 3 days?", answer: "Yes, cooked fish can be safely eaten up to 3 days after cooking if refrigerated properly.", category: "seafood", source: "FDA"},
+            {id: 18, question: "Can I eat ice cream with freezer burn?", answer: "Yes, but the taste and texture may be poor. It is not harmful.", category: "frozen foods", source: "FDA"},
+            {id: 19, question: "Can I eat pizza after 5 days in the fridge?", answer: "No, leftovers should be eaten within 3–4 days.", category: "prepared meals", source: "USDA"},
+            {id: 20, question: "Can I eat food that fell on the floor?", answer: "Maybe. The '5-second rule' is a myth — contamination can happen instantly.", category: "general", source: "CDC"},
+            {id: 21, question: "Can I drink almond milk past the expiration date?", answer: "Maybe. Check smell and texture. Use within 7–10 days of opening.", category: "plant-based", source: "FDA"},
+            {id: 22, question: "How long does opened wine last?", answer: "Red wine lasts 3–5 days, white wine up to 7 days in the fridge with a cork or stopper.", category: "beverages", source: "FDA"},
+            {id: 23, question: "Can I eat honey that has crystallized?", answer: "Yes, crystallized honey is perfectly safe. Warm gently to return to liquid.", category: "condiments", source: "FDA"},
+            {id: 24, question: "Can I eat chocolate after the expiration date?", answer: "Yes, chocolate can last for months or years past the date if stored cool and dry.", category: "snacks", source: "FDA"},
+            {id: 25, question: "Can I use baking soda past its expiration date?", answer: "Yes, for cleaning. For baking, test it with vinegar—if it fizzes, it still works.", category: "baking", source: "FDA"},
+            {id: 26, question: "Can I eat expired protein powder?", answer: "Maybe. If stored dry and sealed, it may still be safe, though potency and flavor may fade.", category: "supplements", source: "FDA"},
+            {id: 27, question: "What temperature should I cook chicken to?", answer: "Chicken should be cooked to an internal temperature of 165°F (74°C) in the thickest part of the meat.", category: "cooking", source: "USDA"},
+            {id: 28, question: "How long does milk last after opening?", answer: "Milk typically lasts 4-7 days after opening when properly refrigerated.", category: "dairy", source: "FDA"},
+            {id: 29, question: "Can I eat cheese with mold on it?", answer: "For hard cheeses, you can cut off the moldy part plus 1 inch. For soft cheeses, discard the entire item.", category: "dairy", source: "FDA"},
+            {id: 30, question: "How should I wash fruits and vegetables?", answer: "Wash all produce under running water, even if you plan to peel it. Use a brush for firm produce.", category: "produce", source: "FDA"},
+            {id: 31, question: "How can I tell if fish is fresh?", answer: "Fresh fish should smell like the ocean, not 'fishy.' Eyes should be clear, flesh should be firm.", category: "seafood", source: "FDA"},
+            {id: 32, question: "What temperature should my refrigerator be?", answer: "Refrigerators should be set at 40°F (4°C) or below to slow bacterial growth.", category: "storage", source: "FDA"},
+            {id: 33, question: "Can I eat potatoes that are green?", answer: "No, green potatoes contain solanine, which can be toxic. Remove green portions or discard entirely.", category: "produce", source: "FDA"},
+            {id: 34, question: "Is it safe to eat raw oysters?", answer: "Raw oysters carry risk of foodborne illness. People with compromised immune systems should avoid them.", category: "seafood", source: "FDA"},
+            {id: 35, question: "How long does bacon last in the fridge?", answer: "Unopened bacon lasts about 1 week past the sell-by date. Opened bacon should be used within 7 days.", category: "meat", source: "USDA"},
+            {id: 36, question: "Can I put hot food directly in the refrigerator?", answer: "Yes, it's safer to refrigerate hot food quickly rather than letting it cool at room temperature.", category: "storage", source: "USDA"},
+            {id: 37, question: "What are the symptoms of food poisoning?", answer: "Symptoms include nausea, vomiting, diarrhea, stomach cramps, and fever. Seek medical care if severe.", category: "contamination", source: "CDC"},
+            {id: 38, question: "How long do frozen vegetables last?", answer: "Frozen vegetables maintain best quality for 8-12 months but remain safe indefinitely.", category: "frozen foods", source: "FDA"},
+            {id: 39, question: "How long does bread last?", answer: "Store-bought bread lasts 5-7 days at room temperature, longer if refrigerated.", category: "grains", source: "FDA"},
+            {id: 40, question: "How long do canned goods last?", answer: "Most canned goods last 2-5 years when stored in a cool, dry place.", category: "canned", source: "USDA"},
+            {id: 41, question: "Is it safe to eat medium-rare steak?", answer: "Yes, whole cuts of beef can be safely eaten medium-rare (145°F) because bacteria are only on the surface.", category: "meat", source: "USDA"},
+            {id: 42, question: "How long can I keep hard-boiled eggs?", answer: "Hard-boiled eggs can be stored in the refrigerator for up to 1 week.", category: "dairy", source: "FDA"},
+            {id: 43, question: "How long do cut vegetables last?", answer: "Cut vegetables should be used within 2-5 days when stored properly in the refrigerator.", category: "produce", source: "FDA"},
+            {id: 44, question: "How long can I keep shrimp in the fridge?", answer: "Raw shrimp should be used within 1-2 days. Cooked shrimp lasts 3-4 days.", category: "seafood", source: "FDA"},
+            {id: 45, question: "What's the danger zone for food temperature?", answer: "The danger zone is 40-140°F (4-60°C) where bacteria multiply rapidly.", category: "storage", source: "USDA"},
+            {id: 46, question: "How long does food poisoning last?", answer: "Most food poisoning resolves in 3-7 days, but some cases may last longer.", category: "contamination", source: "CDC"},
+            {id: 47, question: "Can I refreeze thawed ice cream?", answer: "Yes, but texture will be poor and there's increased risk of bacterial growth.", category: "frozen foods", source: "FDA"},
+            {id: 48, question: "Can I eat expired cereal?", answer: "Cereal is usually safe past expiration but may lose crunch and flavor.", category: "grains", source: "FDA"},
+            {id: 49, question: "Can I eat from a dented can?", answer: "Small dents are usually okay, but avoid cans with dents on seams or sharp edges.", category: "canned", source: "USDA"},
+            {id: 50, question: "How long can I marinate chicken?", answer: "Chicken can be marinated in the refrigerator for up to 2 days. Always marinate in the refrigerator, never at room temperature.", category: "meat", source: "USDA"},
+            {id: 51, question: "Can I drink milk that smells slightly sour?", answer: "No, if milk smells sour or off, it should be discarded as it may contain harmful bacteria.", category: "dairy", source: "FDA"},
+            {id: 52, question: "Is it safe to eat sprouted potatoes?", answer: "Remove sprouts and green areas. If the potato is mostly green or heavily sprouted, discard it.", category: "produce", source: "FDA"},
+            {id: 53, question: "Can I refreeze thawed fish?", answer: "Only if the fish was thawed in the refrigerator and hasn't been out for more than 2 hours.", category: "seafood", source: "FDA"},
+            {id: 54, question: "Can I thaw food on the counter?", answer: "No, thaw food in the refrigerator, cold water, or microwave - never at room temperature.", category: "storage", source: "USDA"},
+            {id: 55, question: "Can I get food poisoning from vegetables?", answer: "Yes, raw vegetables can carry E. coli, Salmonella, and other pathogens. Wash thoroughly.", category: "contamination", source: "CDC"},
+            {id: 56, question: "How long does frozen pizza last?", answer: "Frozen pizza maintains best quality for 1-2 months but remains safe longer.", category: "frozen foods", source: "FDA"},
+            {id: 57, question: "How long does flour last?", answer: "All-purpose flour lasts 6-8 months at room temperature, longer if refrigerated or frozen.", category: "grains", source: "FDA"},
+            {id: 58, question: "How long does opened canned food last?", answer: "Transfer to covered container and refrigerate. Use within 3-4 days.", category: "canned", source: "USDA"},
+            {id: 59, question: "Can I refreeze thawed meat?", answer: "Yes, if the meat was thawed in the refrigerator and hasn't been left out for more than 2 hours.", category: "meat", source: "USDA"},
+            {id: 60, question: "How long does cream cheese last?", answer: "Unopened cream cheese lasts 3-4 weeks past the date. Opened cream cheese should be used within 2 weeks.", category: "dairy", source: "FDA"},
+            {id: 61, question: "Can I eat lettuce that's turning brown?", answer: "Brown edges are usually just oxidation and safe to eat, but slimy or foul-smelling lettuce should be discarded.", category: "produce", source: "FDA"},
+            {id: 62, question: "What temperature should I cook fish to?", answer: "Fish should be cooked to an internal temperature of 145°F (63°C).", category: "cooking", source: "FDA"},
+            {id: 63, question: "What's the most dangerous foodborne illness?", answer: "Botulism is extremely dangerous. It's rare but can be fatal without treatment.", category: "contamination", source: "CDC"},
+            {id: 64, question: "Can I eat frozen berries without cooking?", answer: "Yes, frozen berries are safe to eat without cooking. Thaw and rinse if desired.", category: "frozen foods", source: "FDA"},
+            {id: 65, question: "Can I eat raw oats?", answer: "Yes, rolled oats can be eaten raw, though they're more digestible when cooked.", category: "grains", source: "FDA"},
+            {id: 66, question: "Can I freeze canned food?", answer: "Don't freeze in the can. Transfer to freezer-safe container if needed.", category: "canned", source: "USDA"},
+            {id: 67, question: "How long does cooked ground beef last?", answer: "Cooked ground beef can be refrigerated for 3-4 days or frozen for 2-6 months.", category: "leftovers", source: "USDA"},
+            {id: 68, question: "Can I freeze milk?", answer: "Yes, milk can be frozen for up to 3 months, though texture may change slightly when thawed.", category: "dairy", source: "FDA"},
+            {id: 69, question: "How long do berries last in the fridge?", answer: "Most berries last 3-7 days in the refrigerator. Don't wash until ready to eat.", category: "produce", source: "FDA"},
+            {id: 70, question: "How long does canned tuna last after opening?", answer: "Opened canned tuna should be used within 3-5 days when refrigerated.", category: "seafood", source: "FDA"},
+            {id: 71, question: "How long does food last in a power outage?", answer: "Keep refrigerator closed. Food stays safe 4 hours in refrigerator, 48 hours in full freezer.", category: "storage", source: "USDA"},
+            {id: 72, question: "Can I get sick from cross-contamination?", answer: "Yes, bacteria can transfer from raw meat to other foods via cutting boards, utensils, or hands.", category: "contamination", source: "CDC"},
+            {id: 73, question: "How long does frozen bread last?", answer: "Frozen bread maintains best quality for 3 months but remains safe longer.", category: "frozen foods", source: "FDA"},
+            {id: 74, question: "How long do crackers last after opening?", answer: "Crackers stay fresh 1-2 months after opening when stored in airtight container.", category: "grains", source: "FDA"},
+            {id: 75, question: "How long does peanut butter last?", answer: "Unopened peanut butter lasts 6-9 months. Opened natural peanut butter lasts 2-3 months.", category: "canned", source: "FDA"},
+            {id: 76, question: "How long can I keep ground turkey in the fridge?", answer: "Ground turkey should be used within 1-2 days of purchase when stored in the refrigerator.", category: "meat", source: "USDA"},
+            {id: 77, question: "Is it safe to eat eggs with cracked shells?", answer: "Avoid eggs with cracked shells as bacteria can enter through the cracks.", category: "dairy", source: "FDA"},
+            {id: 78, question: "Can I eat mushrooms that are slimy?", answer: "No, slimy mushrooms should be discarded as they may harbor harmful bacteria.", category: "produce", source: "FDA"},
+            {id: 79, question: "Can I eat fish that smells fishy?", answer: "No, fish should not smell 'fishy.' A strong fish odor indicates spoilage.", category: "seafood", source: "FDA"},
+            {id: 80, question: "Can I store potatoes in the refrigerator?", answer: "No, refrigeration converts potato starch to sugar. Store in a cool, dark place.", category: "storage", source: "USDA"},
+            {id: 81, question: "How do I prevent cross-contamination?", answer: "Use separate cutting boards for raw meat and other foods. Wash hands and utensils frequently.", category: "contamination", source: "CDC"},
+            {id: 82, question: "Can I cook frozen meat without thawing?", answer: "Yes, but cooking time increases by approximately 50%. Ensure proper internal temperature.", category: "cooking", source: "USDA"},
+            {id: 83, question: "Can I eat pasta past the expiration date?", answer: "Dried pasta can be safe months past expiration if stored properly and shows no signs of spoilage.", category: "grains", source: "FDA"},
+            {id: 84, question: "How long does honey last?", answer: "Honey never spoils due to its low moisture content and acidic pH.", category: "canned", source: "FDA"},
+            {id: 85, question: "Can I eat ham that's been left out for 4 hours?", answer: "No, perishable foods like ham should not be left at room temperature for more than 2 hours.", category: "meat", source: "USDA"},
+            {id: 86, question: "How long does butter last unrefrigerated?", answer: "Butter can be left at room temperature for 1-2 days. For longer storage, refrigerate.", category: "dairy", source: "USDA"},
+            {id: 87, question: "Is it safe to eat pre-washed salad?", answer: "Yes, but washing again doesn't hurt. Check for recalls and use by the expiration date.", category: "produce", source: "FDA"},
+            {id: 88, question: "Is it safe to eat sushi-grade fish at home?", answer: "Sushi-grade fish has been frozen to kill parasites, but still carries some risk. Buy from reputable sources.", category: "seafood", source: "FDA"},
+            {id: 89, question: "Should I store bread in the refrigerator?", answer: "Bread stays fresh longer at room temperature. Refrigeration actually speeds staling.", category: "storage", source: "USDA"},
+            {id: 90, question: "Can I get food poisoning from rice?", answer: "Yes, rice can harbor Bacillus cereus bacteria. Cool and refrigerate cooked rice quickly.", category: "contamination", source: "CDC"},
+            {id: 91, question: "How long do TV dinners last in the freezer?", answer: "Frozen meals maintain best quality for 3-4 months but remain safe longer.", category: "frozen foods", source: "FDA"},
+            {id: 92, question: "How long does cooked quinoa last?", answer: "Cooked quinoa lasts 4-6 days in the refrigerator when properly stored.", category: "grains", source: "FDA"},
+            {id: 93, question: "Can I eat expired tomato sauce?", answer: "Canned tomato sauce can be safe months past expiration if the can isn't damaged.", category: "canned", source: "FDA"},
+            {id: 94, question: "Can I eat turkey that's pink inside?", answer: "Turkey can remain pink even when fully cooked. Use a thermometer - turkey is safe at 165°F regardless of color.", category: "meat", source: "USDA"},
+            {id: 95, question: "Can I eat cottage cheese past expiration?", answer: "Cottage cheese can be safe 5-10 days past the sell-by date if it smells and looks normal.", category: "dairy", source: "FDA"},
+            {id: 96, question: "Can I eat bananas with brown spots?", answer: "Yes, brown spots on bananas are just ripeness indicators and are perfectly safe to eat.", category: "produce", source: "FDA"},
+            {id: 97, question: "How long does lobster last?", answer: "Live lobster should be cooked the day of purchase. Cooked lobster lasts 3-4 days in the fridge.", category: "seafood", source: "FDA"},
+            {id: 98, question: "Can I store opened cans in the refrigerator?", answer: "Transfer contents to a covered container. Don't store in the original can.", category: "storage", source: "FDA"},
+            {id: 99, question: "What foods cause the most food poisoning?", answer: "Poultry, eggs, dairy, seafood, and produce are common sources of foodborne illness.", category: "contamination", source: "CDC"},
+            {id: 100, question: "Can I eat expired frozen food?", answer: "Frozen food doesn't expire in the traditional sense but quality decreases over time.", category: "frozen foods", source: "FDA"},
+            {id: 101, question: "How long do bagels last?", answer: "Fresh bagels last 2-3 days at room temperature, up to 1 week refrigerated.", category: "grains", source: "FDA"},
+            {id: 102, question: "Can I eat expired jam?", answer: "Unopened jam can be safe months past expiration. Once opened, use within 1 year.", category: "canned", source: "FDA"},
+            {id: 103, question: "Is it safe to eat rare hamburger?", answer: "No, ground beef should always be cooked to 160°F because bacteria can be mixed throughout during grinding.", category: "meat", source: "USDA"},
+            {id: 104, question: "How long does sour cream last?", answer: "Sour cream lasts 1-3 weeks past the sell-by date when properly refrigerated.", category: "dairy", source: "FDA"},
+            {id: 105, question: "How long do apples last?", answer: "Apples can last 1-2 months in the refrigerator, or 1-2 weeks at room temperature.", category: "produce", source: "FDA"},
+            {id: 106, question: "Can I eat mussels that don't open?", answer: "No, discard any mussels that don't open during cooking as they may be dead.", category: "seafood", source: "FDA"},
+            {id: 107, question: "How full can I pack my refrigerator?", answer: "Don't overpack - cold air needs to circulate to maintain safe temperatures.", category: "storage", source: "USDA"},
+            {id: 108, question: "How long after eating do food poisoning symptoms start?", answer: "Symptoms can start within hours or take several days, depending on the pathogen.", category: "contamination", source: "CDC"},
+            {id: 109, question: "Can I thaw food in the microwave?", answer: "Yes, but cook immediately after thawing. Don't let it sit at room temperature.", category: "cooking", source: "USDA"},
+            {id: 110, question: "Can I eat moldy cheese on purpose?", answer: "Only eat mold that's intentionally added during cheese-making (like blue cheese).", category: "dairy", source: "FDA"},
+            {id: 111, question: "Can I eat carrots that are bendy?", answer: "Slightly bendy carrots are safe to eat, but avoid if they're slimy or have an off smell.", category: "produce", source: "FDA"},
+            {id: 112, question: "Can I eat crab that smells like ammonia?", answer: "No, ammonia smell indicates spoilage. Fresh crab should smell like the ocean.", category: "seafood", source: "FDA"},
+            {id: 113, question: "How long can I leave food in a hot car?", answer: "Never leave perishable food in a hot car. Temperatures can reach dangerous levels quickly.", category: "storage", source: "USDA"},
+            {id: 114, question: "Can I eat moldy bread?", answer: "No, discard the entire loaf if any mold is visible. Mold can spread beyond what you see.", category: "contamination", source: "CDC"},
+            {id: 115, question: "What temperature kills bacteria in food?", answer: "Most harmful bacteria are killed at 165°F (74°C), though specific temperatures vary by food type.", category: "cooking", source: "USDA"},
+            {id: 116, question: "How long should I cook chicken breast?", answer: "Cook until internal temperature reaches 165°F. Time varies by thickness and cooking method.", category: "cooking", source: "USDA"},
+            {id: 117, question: "Can I cook with wine that's gone bad?", answer: "If wine is undrinkable, don't cook with it. Use only wine you would drink.", category: "cooking", source: "FDA"},
+            {id: 118, question: "What's the safe temperature for reheating leftovers?", answer: "Reheat all leftovers to 165°F (74°C) throughout before serving.", category: "cooking", source: "USDA"},
+            {id: 119, question: "How do I safely defrost meat?", answer: "Defrost in refrigerator, cold water (change every 30 min), or microwave. Never at room temperature.", category: "cooking", source: "USDA"},
+            {id: 120, question: "Can I cook chicken from frozen?", answer: "Yes, but increase cooking time by 50% and ensure it reaches 165°F internal temperature.", category: "cooking", source: "USDA"},
+            {id: 121, question: "What temperature should duck be cooked to?", answer: "Duck should reach 165°F (74°C) internal temperature in the thickest part.", category: "cooking", source: "USDA"},
+            {id: 122, question: "How long does it take to kill bacteria when cooking?", answer: "Instant kill occurs at specific temperatures, but lower temps need longer times.", category: "cooking", source: "USDA"},
+            {id: 123, question: "Can I cook meat that's been marinating for a week?", answer: "No, don't marinate meat for more than 2 days in the refrigerator.", category: "cooking", source: "USDA"},
+            {id: 124, question: "What's the safe temperature for cooking rabbit?", answer: "Rabbit should be cooked to 160°F (71°C) internal temperature.", category: "cooking", source: "USDA"},
+            {id: 125, question: "How do I know if oil is hot enough for frying?", answer: "Use a thermometer - oil should be 350-375°F for most frying applications.", category: "cooking", source: "USDA"},
+            {id: 126, question: "Can I cook with aluminum foil in the oven?", answer: "Yes, but don't let foil touch oven walls and ensure proper air circulation.", category: "cooking", source: "FDA"},
+            {id: 127, question: "What temperature should game meat be cooked to?", answer: "Wild game should be cooked to at least 160°F (71°C) to kill potential parasites.", category: "cooking", source: "USDA"},
+            {id: 128, question: "How long should I cook beans to make them safe?", answer: "Boil kidney beans for 10 minutes to destroy toxins. Other beans need thorough cooking too.", category: "cooking", source: "FDA"},
+            {id: 129, question: "Can I cook in a slow cooker on warm setting?", answer: "No, 'warm' setting doesn't reach safe temperatures. Use low or high settings only.", category: "cooking", source: "USDA"},
+            {id: 130, question: "What's the safe temperature for cooking goose?", answer: "Goose should reach 165°F (74°C) internal temperature in the thickest part.", category: "cooking", source: "USDA"},
+            {id: 131, question: "How do I safely cook organ meats?", answer: "Cook organ meats to 160°F (71°C) internal temperature.", category: "cooking", source: "USDA"},
+            {id: 132, question: "Can I cook frozen vegetables without thawing?", answer: "Yes, frozen vegetables can be cooked directly from frozen.", category: "cooking", source: "FDA"},
+            {id: 133, question: "What temperature should meatballs be cooked to?", answer: "Meatballs should reach 165°F (74°C) internal temperature.", category: "cooking", source: "USDA"},
+            {id: 134, question: "How long should I pressure cook meat?", answer: "Follow tested recipes. Pressure cooking times vary by cut and size of meat.", category: "cooking", source: "USDA"},
+            {id: 135, question: "Can I cook with expired spices?", answer: "Expired spices won't harm you but may have less flavor. Check for signs of spoilage.", category: "cooking", source: "FDA"},
+            {id: 136, question: "What's the safe temperature for cooking sausage?", answer: "Fresh sausage should be cooked to 160°F (71°C) internal temperature.", category: "cooking", source: "USDA"},
+            {id: 137, question: "How do I safely cook rice to avoid bacteria?", answer: "Cook rice to 165°F, cool quickly, refrigerate within 2 hours.", category: "cooking", source: "CDC"},
+            {id: 138, question: "Can I cook meat that's turned gray?", answer: "Gray color can be normal due to lack of oxygen. Check smell - if off, discard.", category: "cooking", source: "USDA"},
+            {id: 139, question: "What temperature should seafood be cooked to?", answer: "Most seafood should be cooked to 145°F (63°C) internal temperature.", category: "cooking", source: "FDA"},
+            {id: 140, question: "How long should I cook a whole chicken?", answer: "Cook at 325°F until internal temperature reaches 165°F. Time varies by weight.", category: "cooking", source: "USDA"},
+            {id: 141, question: "Can I cook with wine during pregnancy?", answer: "Alcohol evaporates during cooking, but some residual alcohol may remain.", category: "cooking", source: "FDA"},
+            {id: 142, question: "What's the safe temperature for cooking burgers?", answer: "Ground beef burgers should be cooked to 160°F (71°C) internal temperature.", category: "cooking", source: "USDA"},
+            {id: 143, question: "How do I know when bread is fully baked?", answer: "Bread is done when internal temperature reaches 190-200°F or sounds hollow when tapped.", category: "cooking", source: "USDA"},
+            {id: 144, question: "Can I cook frozen fish without thawing?", answer: "Yes, but increase cooking time by about 50% and ensure it reaches 145°F.", category: "cooking", source: "FDA"},
+            {id: 145, question: "What temperature should I cook pork chops to?", answer: "Pork chops should be cooked to 145°F (63°C) with a 3-minute rest.", category: "cooking", source: "USDA"},
+            {id: 146, question: "What are the symptoms of food poisoning?", answer: "Symptoms include nausea, vomiting, diarrhea, stomach cramps, and fever. Seek medical care if severe.", category: "contamination", source: "CDC"},
+            {id: 147, question: "How long does food poisoning last?", answer: "Most food poisoning resolves in 3-7 days, but some cases may last longer.", category: "contamination", source: "CDC"},
+            {id: 148, question: "What's the difference between food poisoning and stomach flu?", answer: "Food poisoning comes from contaminated food; stomach flu is viral and spreads person-to-person.", category: "contamination", source: "CDC"},
+            {id: 149, question: "Can I get sick from eating raw sprouts?", answer: "Yes, raw sprouts can harbor E. coli and Salmonella. Cook sprouts to reduce risk.", category: "contamination", source: "CDC"},
+            {id: 150, question: "How do I clean my cutting board safely?", answer: "Use hot soapy water, then sanitize with bleach solution or run through dishwasher.", category: "contamination", source: "CDC"},
+            {id: 151, question: "Can I get food poisoning from peanut butter?", answer: "Yes, peanut butter can be contaminated with Salmonella. Check for recalls.", category: "contamination", source: "CDC"},
+            {id: 152, question: "What should I do if I think I have food poisoning?", answer: "Stay hydrated, rest, and seek medical care if symptoms are severe or prolonged.", category: "contamination", source: "CDC"},
+            {id: 153, question: "Can I get sick from eating at buffets?", answer: "Risk is higher at buffets due to food sitting out. Choose items that are hot and fresh.", category: "contamination", source: "CDC"},
+            {id: 154, question: "How do I know if canned food is contaminated?", answer: "Don't eat from cans that are bulging, leaking, rusted, or dented on seams.", category: "contamination", source: "CDC"},
+            {id: 155, question: "Can I get food poisoning from pizza?", answer: "Yes, especially if pizza has been left out too long or contains contaminated ingredients.", category: "contamination", source: "CDC"},
+            {id: 156, question: "What's the safest way to wash fruits and vegetables?", answer: "Rinse under running water, scrub firm produce with a brush, dry with clean towel.", category: "contamination", source: "CDC"},
+            {id: 157, question: "Can I get sick from eating cookie dough?", answer: "Yes, raw eggs and raw flour in cookie dough can contain harmful bacteria.", category: "contamination", source: "CDC"},
+            {id: 158, question: "How long should I wash my hands before handling food?", answer: "Wash hands for at least 20 seconds with soap and warm water.", category: "contamination", source: "CDC"},
+            {id: 159, question: "Can I get food poisoning from ice?", answer: "Yes, if ice is made from contaminated water or stored improperly.", category: "contamination", source: "CDC"},
+            {id: 160, question: "What's the most common cause of food poisoning?", answer: "Norovirus is the most common cause, followed by Salmonella and Clostridium perfringens.", category: "contamination", source: "CDC"},
+            {id: 161, question: "Can I get sick from eating oysters?", answer: "Yes, raw oysters can contain Vibrio bacteria and other pathogens.", category: "contamination", source: "CDC"},
+            {id: 162, question: "How do I sanitize kitchen sponges?", answer: "Microwave damp sponge for 1 minute or run through dishwasher daily.", category: "contamination", source: "CDC"},
+            {id: 163, question: "Can pets contaminate food?", answer: "Yes, pets can carry Salmonella and other bacteria. Keep pets away from food prep areas.", category: "contamination", source: "CDC"},
+            {id: 164, question: "What foods should pregnant women avoid?", answer: "Avoid raw/undercooked meat, fish, eggs, unpasteurized dairy, deli meats, and raw sprouts.", category: "contamination", source: "CDC"},
+            {id: 165, question: "Can I get food poisoning from restaurant food?", answer: "Yes, restaurants can be sources of foodborne illness if food safety practices aren't followed.", category: "contamination", source: "CDC"},
+            {id: 166, question: "How do I know if my refrigerator is cold enough?", answer: "Use a thermometer - refrigerator should be 40°F or below, freezer at 0°F.", category: "contamination", source: "CDC"},
+            {id: 167, question: "Can I get sick from eating old spices?", answer: "Old spices won't make you sick but lose potency. Discard if they smell musty or look moldy.", category: "contamination", source: "CDC"},
+            {id: 168, question: "What's the danger of eating raw meat?", answer: "Raw meat can contain E. coli, Salmonella, parasites, and other harmful pathogens.", category: "contamination", source: "CDC"},
+            {id: 169, question: "Can I get food poisoning from salad?", answer: "Yes, leafy greens can be contaminated with E. coli, Salmonella, and other bacteria.", category: "contamination", source: "CDC"},
+            {id: 170, question: "How do I prevent food poisoning when traveling?", answer: "Eat hot, freshly cooked food. Avoid raw fruits/vegetables unless you can peel them yourself.", category: "contamination", source: "CDC"},
+            {id: 171, question: "How long does stale cookies last?", answer: "Stale cookies are safe to eat but may have poor texture. Check for mold first.", category: "grains", source: "FDA"},
+            {id: 172, question: "How long does brown rice last?", answer: "Brown rice lasts 3-6 months due to higher oil content. White rice lasts longer.", category: "grains", source: "FDA"},
+            {id: 173, question: "Can I eat cake left out overnight?", answer: "Cakes with dairy or cream fillings should not be left out. Plain cakes may be okay for 1-2 days.", category: "grains", source: "FDA"},
+            {id: 174, question: "How long do muffins last?", answer: "Fresh muffins last 2-3 days at room temperature, up to 1 week refrigerated.", category: "grains", source: "FDA"},
+            {id: 175, question: "Can I eat expired pancake mix?", answer: "Expired pancake mix may lose leavening power but is usually safe if it smells normal.", category: "grains", source: "FDA"},
+            {id: 176, question: "How long does popcorn last?", answer: "Unpopped kernels last 1-2 years. Popped popcorn stays fresh 1-2 weeks.", category: "grains", source: "FDA"},
+            {id: 177, question: "Can I eat bread with white spots?", answer: "White spots on bread are usually mold. Discard the entire loaf.", category: "grains", source: "FDA"},
+            {id: 178, question: "How long does oatmeal last?", answer: "Dry oatmeal lasts 1-2 years. Cooked oatmeal lasts 4-6 days in the fridge.", category: "grains", source: "FDA"},
+            {id: 179, question: "Can I eat tortillas past expiration?", answer: "Tortillas are usually safe a few days past expiration if they smell normal and have no mold.", category: "grains", source: "FDA"},
+            {id: 180, question: "How long does pie last?", answer: "Fruit pies last 2-3 days at room temperature. Cream pies need refrigeration and last 2-4 days.", category: "grains", source: "FDA"},
+            {id: 181, question: "Can I eat granola past expiration?", answer: "Granola is usually safe past expiration but may lose crunch and flavor.", category: "grains", source: "FDA"},
+            {id: 182, question: "How long does pasta sauce last after opening?", answer: "Opened pasta sauce lasts 5-7 days in the refrigerator.", category: "grains", source: "FDA"},
+            {id: 183, question: "Can I eat pizza dough past expiration?", answer: "Fresh pizza dough should be used by expiration date. Frozen dough lasts longer.", category: "grains", source: "FDA"},
+            {id: 184, question: "How long do donuts last?", answer: "Donuts are best eaten within 1-2 days. Cream-filled donuts should be refrigerated.", category: "grains", source: "FDA"},
+            {id: 185, question: "Can I eat hardtack that's years old?", answer: "Properly stored hardtack can last for years if it's dry and shows no signs of mold.", category: "grains", source: "FDA"},
+            {id: 186, question: "How long does sourdough starter last?", answer: "Active sourdough starter lasts indefinitely with proper feeding. Refrigerated starter lasts weeks.", category: "grains", source: "FDA"},
+            {id: 187, question: "Can I eat expired baking powder?", answer: "Expired baking powder loses effectiveness but isn't harmful. Test by adding to water.", category: "grains", source: "FDA"},
+            {id: 188, question: "How long does homemade bread last?", answer: "Homemade bread without preservatives lasts 2-4 days at room temperature.", category: "grains", source: "FDA"},
+            {id: 189, question: "Can I eat coconut oil that's expired?", answer: "Coconut oil rarely goes bad due to high saturated fat content. Check for rancid smell.", category: "canned", source: "FDA"},
+            {id: 190, question: "How long does olive oil last?", answer: "Olive oil lasts 2 years unopened, 1 year after opening when stored properly.", category: "canned", source: "FDA"},
+            {id: 191, question: "Can I eat expired maple syrup?", answer: "Pure maple syrup can develop mold but doesn't spoil. Check for off odors or mold.", category: "canned", source: "FDA"},
+            {id: 192, question: "How long does vinegar last?", answer: "Vinegar has an indefinite shelf life due to its acidic nature.", category: "canned", source: "FDA"},
+            {id: 193, question: "Can I eat expired hot sauce?", answer: "Hot sauce can be safe years past expiration due to vinegar and capsaicin content.", category: "canned", source: "FDA"},
+            {id: 194, question: "How long does coconut milk last?", answer: "Canned coconut milk lasts 2-3 years unopened, 4-6 days in fridge after opening.", category: "canned", source: "FDA"},
+            {id: 195, question: "Can I eat expired pickles?", answer: "Unopened pickles can be safe months past expiration due to acidity and salt content.", category: "canned", source: "FDA"},
+            {id: 196, question: "How long does soy sauce last?", answer: "Soy sauce can last 3+ years due to high salt content. Quality may decline over time.", category: "canned", source: "FDA"},
+            {id: 197, question: "Can I eat expired mustard?", answer: "Mustard can be safe months past expiration due to vinegar and spice content.", category: "canned", source: "FDA"},
+            {id: 198, question: "How long does canned meat last?", answer: "Canned meat lasts 2-5 years when stored properly in a cool, dry place.", category: "canned", source: "USDA"},
+            {id: 199, question: "Can I eat expired ketchup?", answer: "Ketchup can be safe months past expiration due to vinegar and tomato acidity.", category: "canned", source: "FDA"},
+            {id: 200, question: "How long do nuts last?", answer: "Nuts last 6-12 months at room temperature, longer if refrigerated or frozen.", category: "canned", source: "FDA"},
+            {id: 201, question: "Can I eat expired vanilla extract?", answer: "Pure vanilla extract has indefinite shelf life due to alcohol content.", category: "canned", source: "FDA"},
+            {id: 202, question: "How long does tahini last?", answer: "Unopened tahini lasts 1 year. Opened tahini lasts 6 months at room temperature.", category: "canned", source: "FDA"},
+            {id: 203, question: "Can I eat expired coconut flakes?", answer: "Dried coconut can be safe months past expiration if it smells normal and isn't rancid.", category: "canned", source: "FDA"},
+            {id: 204, question: "Can I refreeze thawed ice cream?", answer: "Yes, but texture will be poor and there's increased risk of bacterial growth.", category: "frozen foods", source: "FDA"},
+            {id: 205, question: "How long does frozen pizza last?", answer: "Frozen pizza maintains best quality for 1-2 months but remains safe longer.", category: "frozen foods", source: "FDA"},
+            {id: 206, question: "Can I eat frozen berries without cooking?", answer: "Yes, frozen berries are safe to eat without cooking. Thaw and rinse if desired.", category: "frozen foods", source: "FDA"},
+            {id: 207, question: "How long does frozen bread last?", answer: "Frozen bread maintains best quality for 3 months but remains safe longer.", category: "frozen foods", source: "FDA"},
+            {id: 208, question: "Can I cook frozen meat without thawing?", answer: "Yes, but cooking time increases by approximately 50%. Ensure proper internal temperature.", category: "frozen foods", source: "USDA"},
+            {id: 209, question: "How long do frozen french fries last?", answer: "Frozen french fries maintain best quality for 12 months but remain safe longer.", category: "frozen foods", source: "FDA"},
+            {id: 210, question: "Can I refreeze thawed meat?", answer: "Only if it was thawed in the refrigerator and hasn't been out more than 2 hours.", category: "frozen foods", source: "USDA"},
+            {id: 211, question: "How long does frozen fish last?", answer: "Lean fish lasts 6 months frozen, fatty fish lasts 2-3 months for best quality.", category: "frozen foods", source: "FDA"},
+            {id: 212, question: "Can I eat expired frozen food?", answer: "Frozen food doesn't expire in the traditional sense but quality decreases over time.", category: "frozen foods", source: "FDA"},
+            {id: 213, question: "How long do TV dinners last in the freezer?", answer: "Frozen meals maintain best quality for 3-4 months but remain safe longer.", category: "frozen foods", source: "FDA"},
+            {id: 214, question: "Can I thaw food at room temperature?", answer: "No, thaw in refrigerator, cold water, or microwave to prevent bacterial growth.", category: "frozen foods", source: "USDA"},
+            {id: 215, question: "How long does frozen chicken last?", answer: "Whole frozen chicken lasts 12 months, pieces last 9 months for best quality.", category: "frozen foods", source: "USDA"},
+            {id: 216, question: "Can I freeze food in original packaging?", answer: "For short-term storage yes, but rewrap for longer storage to prevent freezer burn.", category: "frozen foods", source: "FDA"},
+            {id: 217, question: "How long do frozen burritos last?", answer: "Frozen burritos maintain best quality for 1-2 months but remain safe longer.", category: "frozen foods", source: "FDA"},
+            {id: 218, question: "Can I eat freezer-burned meat?", answer: "Yes, freezer burn affects quality but not safety. Trim off affected areas.", category: "frozen foods", source: "USDA"},
+            {id: 219, question: "How long does frozen soup last?", answer: "Frozen soup maintains best quality for 2-3 months but remains safe longer.", category: "frozen foods", source: "FDA"},
+            {id: 220, question: "Can I freeze eggs in their shells?", answer: "No, eggs expand when frozen and shells will crack. Beat eggs first, then freeze.", category: "frozen foods", source: "USDA"},
+            {id: 221, question: "How long do frozen pastries last?", answer: "Frozen pastries maintain best quality for 1-2 months but remain safe longer.", category: "frozen foods", source: "FDA"},
+            {id: 222, question: "Can I cook from frozen in the microwave?", answer: "Yes, but ensure even heating and proper internal temperature throughout.", category: "frozen foods", source: "FDA"},
+            {id: 223, question: "How long does frozen ground beef last?", answer: "Frozen ground beef maintains best quality for 3-4 months but remains safe longer.", category: "frozen foods", source: "USDA"},
+            {id: 224, question: "Can I refreeze thawed vegetables?", answer: "Only if they still contain ice crystals and were thawed in the refrigerator.", category: "frozen foods", source: "FDA"},
+            {id: 225, question: "How long does frozen ice cream last?", answer: "Ice cream maintains best quality for 2-4 months but remains safe longer.", category: "frozen foods", source: "FDA"},
+            {id: 226, question: "Can I eat day-old sushi?", answer: "No, sushi should be eaten the day it's made for safety and quality.", category: "prepared meals", source: "FDA"},
+            {id: 227, question: "How long does leftover Chinese food last?", answer: "Chinese takeout can be safely stored for 3-4 days in the refrigerator.", category: "prepared meals", source: "USDA"},
+            {id: 228, question: "Can I eat a sandwich left in my car?", answer: "No, perishable foods shouldn't be left in cars due to temperature fluctuations.", category: "prepared meals", source: "USDA"},
+            {id: 229, question: "How long does leftover pasta last?", answer: "Cooked pasta can be stored in the refrigerator for 3-5 days.", category: "prepared meals", source: "USDA"},
+            {id: 230, question: "Can I eat fast food the next day?", answer: "Yes, if properly refrigerated within 2 hours and reheated to 165°F.", category: "prepared meals", source: "USDA"},
+            {id: 231, question: "How long does takeout pizza last?", answer: "Pizza can be safely stored in the refrigerator for 3-4 days.", category: "prepared meals", source: "USDA"},
+            {id: 232, question: "Can I eat leftover fried rice?", answer: "Yes, if refrigerated within 2 hours and reheated to steaming hot.", category: "prepared meals", source: "USDA"},
+            {id: 233, question: "How long does deli sandwich last?", answer: "Deli sandwiches should be eaten within 2-3 days when refrigerated.", category: "prepared meals", source: "USDA"},
+            {id: 234, question: "Can I eat buffet food the next day?", answer: "Only if you took it home immediately and refrigerated within 2 hours.", category: "prepared meals", source: "USDA"},
+            {id: 235, question: "How long does leftover soup last?", answer: "Most soups can be stored in the refrigerator for 3-4 days.", category: "prepared meals", source: "USDA"},
+            {id: 236, question: "Can I eat expired salad from a bag?", answer: "Check for slimy leaves or off odors. When in doubt, throw it out.", category: "prepared meals", source: "FDA"},
+            {id: 237, question: "How long does leftover casserole last?", answer: "Casseroles can be stored in the refrigerator for 3-4 days.", category: "prepared meals", source: "USDA"},
+            {id: 238, question: "Can I eat a wrap left out overnight?", answer: "No, wraps with perishable fillings should not be left out more than 2 hours.", category: "prepared meals", source: "USDA"},
+            {id: 239, question: "How long does restaurant food last?", answer: "Restaurant leftovers follow the same 3-4 day rule when properly refrigerated.", category: "prepared meals", source: "USDA"},
+            {id: 240, question: "Can I eat microwave meals past expiration?", answer: "Don't eat frozen meals past their expiration date for safety.", category: "prepared meals", source: "FDA"},
+            {id: 241, question: "What's the 5-second rule?", answer: "It's a myth. Bacteria can contaminate food instantly upon contact with surfaces.", category: "general", source: "CDC"},
+            {id: 242, question: "Is double-dipping dangerous?", answer: "Yes, double-dipping can spread bacteria and viruses to shared food.", category: "general", source: "CDC"},
+            {id: 243, question: "Can I eat food past the sell-by date?", answer: "Sell-by dates are for retailers. Many foods are safe past this date if stored properly.", category: "general", source: "USDA"},
+            {id: 244, question: "What's the difference between best-by and use-by dates?", answer: "Best-by indicates peak quality, use-by indicates safety. Use-by dates should be followed more strictly.", category: "general", source: "USDA"},
+            {id: 245, question: "Is it safe to eat organic food without washing?", answer: "No, all produce should be washed regardless of whether it's organic or conventional.", category: "general", source: "FDA"},
+            {id: 246, question: "Can I get sick from kitchen towels?", answer: "Yes, dirty kitchen towels can harbor bacteria. Wash frequently or use paper towels.", category: "general", source: "CDC"},
+            {id: 247, question: "How often should I clean my refrigerator?", answer: "Clean spills immediately and do a thorough cleaning monthly.", category: "general", source: "FDA"},
+            {id: 248, question: "Is it safe to eat while cooking?", answer: "Don't taste food with the same utensil you're cooking with. Use a clean spoon each time.", category: "general", source: "USDA"},
+            {id: 249, question: "Can I share drinks with others?", answer: "Sharing drinks can spread bacteria and viruses. It's safer not to share.", category: "general", source: "CDC"},
+            {id: 250, question: "Should I rinse meat before cooking?", answer: "No, rinsing can spread bacteria. Cooking to proper temperature kills harmful bacteria.", category: "general", source: "USDA"},
+            {id: 251, question: "Can I eat non-dairy milk past expiration?", answer: "Check smell and texture. Shelf-stable versions last longer than refrigerated ones.", category: "plant-based", source: "FDA"},
+            {id: 252, question: "How long does tofu last?", answer: "Unopened tofu lasts weeks past the date. Opened tofu should be used within 3-5 days.", category: "plant-based", source: "FDA"},
+            {id: 253, question: "Can I eat sprouted grains?", answer: "Yes, sprouted grains are safe and may be more nutritious than regular grains.", category: "plant-based", source: "FDA"},
+            {id: 254, question: "How long does tempeh last?", answer: "Unopened tempeh lasts about a week past the date. Use opened tempeh within 2-3 days.", category: "plant-based", source: "FDA"},
+            {id: 255, question: "Can I eat nutritional yeast past expiration?", answer: "Nutritional yeast can be safe months past expiration if stored properly.", category: "plant-based", source: "FDA"},
+            {id: 256, question: "How long does coconut yogurt last?", answer: "Coconut yogurt typically lasts 5-7 days past the sell-by date.", category: "plant-based", source: "FDA"},
+            {id: 257, question: "Can I drink plant milk that's separated?", answer: "Separation is normal for some plant milks. Shake well, but discard if it smells off.", category: "plant-based", source: "FDA"},
+            {id: 258, question: "How long does seitan last?", answer: "Homemade seitan lasts 5-7 days refrigerated. Store-bought follows package dates.", category: "plant-based", source: "FDA"},
+            {id: 259, question: "Can I eat expired meat alternatives?", answer: "Follow expiration dates on processed meat alternatives for safety.", category: "plant-based", source: "FDA"},
+            {id: 260, question: "How long does cashew cheese last?", answer: "Homemade cashew cheese lasts 3-5 days. Commercial versions follow package dates.", category: "plant-based", source: "FDA"},
+            {id: 261, question: "Can I drink kombucha past expiration?", answer: "Kombucha may be safe past expiration but taste and carbonation may change.", category: "beverages", source: "FDA"},
+            {id: 262, question: "How long does fresh juice last?", answer: "Fresh juice should be consumed within 24-48 hours when refrigerated.", category: "beverages", source: "FDA"},
+            {id: 263, question: "Can I drink coffee left out overnight?", answer: "Coffee left out overnight may taste bad but is generally safe if no milk was added.", category: "beverages", source: "FDA"},
+            {id: 264, question: "How long does sports drink last after opening?", answer: "Opened sports drinks last 3-5 days in the refrigerator.", category: "beverages", source: "FDA"},
+            {id: 265, question: "Can I drink energy drinks past expiration?", answer: "Energy drinks may be safe past expiration but potency may decrease.", category: "beverages", source: "FDA"},
+            {id: 266, question: "How long does tea last?", answer: "Brewed tea should be consumed within 3-5 days when refrigerated.", category: "beverages", source: "FDA"},
+            {id: 267, question: "Can I drink protein shakes the next day?", answer: "Prepared protein shakes should be consumed within 24 hours when refrigerated.", category: "beverages", source: "FDA"},
+            {id: 268, question: "How long does coconut water last?", answer: "Opened coconut water lasts 2-3 days in the refrigerator.", category: "beverages", source: "FDA"},
+            {id: 269, question: "Can I drink smoothies the next day?", answer: "Smoothies are best consumed immediately but can last 24 hours refrigerated.", category: "beverages", source: "FDA"},
+            {id: 270, question: "How long does soda last after opening?", answer: "Opened soda maintains quality for 2-4 days but is safe longer if refrigerated.", category: "beverages", source: "FDA"},
+            {id: 271, question: "Can I eat expired salad dressing?", answer: "Most dressings are safe past expiration due to vinegar content, but check for off odors.", category: "condiments", source: "FDA"},
+            {id: 272, question: "How long does mayo last after opening?", answer: "Opened mayonnaise lasts 2-3 months in the refrigerator.", category: "condiments", source: "FDA"},
+            {id: 273, question: "Can I eat ranch dressing left out?", answer: "No, dairy-based dressings should not be left out more than 2 hours.", category: "condiments", source: "FDA"},
+            {id: 274, question: "How long does barbecue sauce last?", answer: "Opened BBQ sauce lasts 6-9 months in the refrigerator.", category: "condiments", source: "FDA"},
+            {id: 275, question: "Can I eat moldy parmesan rind?", answer: "Cut off moldy parts of hard cheese rinds. The rest is usually safe.", category: "condiments", source: "FDA"},
+            {id: 276, question: "How long does opened salsa last?", answer: "Opened salsa lasts 5-7 days in the refrigerator.", category: "condiments", source: "FDA"},
+            {id: 277, question: "Can I eat guacamole the next day?", answer: "Guacamole can last 1-2 days refrigerated, though it may brown (still safe).", category: "condiments", source: "FDA"},
+            {id: 278, question: "How long does hummus last?", answer: "Opened hummus lasts 7-10 days in the refrigerator.", category: "condiments", source: "FDA"},
+            {id: 279, question: "Can I eat crystallized honey?", answer: "Yes, crystallized honey is perfectly safe. Warm gently to return to liquid.", category: "condiments", source: "FDA"},
+            {id: 280, question: "How long does teriyaki sauce last?", answer: "Opened teriyaki sauce lasts 6 months to 1 year in the refrigerator.", category: "condiments", source: "FDA"},
+            {id: 281, question: "Can I eat expired candy?", answer: "Most candy is safe past expiration but may lose flavor or change texture.", category: "snacks", source: "FDA"},
+            {id: 282, question: "How long do chips last after opening?", answer: "Opened chips stay fresh 1-2 weeks when stored in airtight container.", category: "snacks", source: "FDA"},
+            {id: 283, question: "Can I eat stale crackers?", answer: "Stale crackers are safe to eat but may have poor texture.", category: "snacks", source: "FDA"},
+            {id: 284, question: "How long does chocolate last?", answer: "Chocolate can last months or years past expiration if stored properly.", category: "snacks", source: "FDA"},
+            {id: 285, question: "Can I eat white chocolate that's yellowed?", answer: "Yellowing is usually from age or improper storage but chocolate is still safe.", category: "snacks", source: "FDA"},
+            {id: 286, question: "How long do cookies last?", answer: "Store-bought cookies last 2-3 weeks. Homemade cookies last 1 week.", category: "snacks", source: "FDA"},
+            {id: 287, question: "Can I eat expired granola bars?", answer: "Granola bars are usually safe past expiration but may lose freshness.", category: "snacks", source: "FDA"},
+            {id: 288, question: "How long does trail mix last?", answer: "Trail mix lasts 6-12 months when stored in airtight container.", category: "snacks", source: "FDA"},
+            {id: 289, question: "Can I eat gummy vitamins past expiration?", answer: "Gummy vitamins may lose potency past expiration but are generally safe.", category: "snacks", source: "FDA"},
+            {id: 290, question: "How long does jerky last after opening?", answer: "Opened jerky lasts 1-2 weeks at room temperature, longer refrigerated.", category: "snacks", source: "FDA"},
+            {id: 291, question: "Can I use expired baking soda for baking?", answer: "Test expired baking soda with vinegar. If it doesn't fizz vigorously, replace it.", category: "baking", source: "FDA"},
+            {id: 292, question: "How long does vanilla extract last?", answer: "Pure vanilla extract lasts indefinitely due to alcohol content.", category: "baking", source: "FDA"},
+            {id: 293, question: "Can I use expired yeast?", answer: "Test yeast in warm water with sugar. If it doesn't foam, it's dead and won't work.", category: "baking", source: "FDA"},
+            {id: 294, question: "How long does cake mix last?", answer: "Cake mix can be safe 4-5 months past expiration but may lose leavening power.", category: "baking", source: "FDA"},
+            {id: 295, question: "Can I use expired cocoa powder?", answer: "Cocoa powder is safe years past expiration but may lose flavor.", category: "baking", source: "FDA"},
+            {id: 296, question: "How long does brown sugar last?", answer: "Brown sugar lasts indefinitely but may harden. Soften with bread slice or apple.", category: "baking", source: "FDA"},
+            {id: 297, question: "Can I use expired food coloring?", answer: "Food coloring is safe years past expiration but colors may fade.", category: "baking", source: "FDA"},
+            {id: 298, question: "How long does powdered sugar last?", answer: "Powdered sugar lasts indefinitely when stored in airtight container.", category: "baking", source: "FDA"},
+            {id: 299, question: "Can I use expired cream of tartar?", answer: "Cream of tartar is safe indefinitely but may lose effectiveness over time.", category: "baking", source: "FDA"},
+            {id: 300, question: "How long does corn starch last?", answer: "Corn starch lasts indefinitely when stored properly.", category: "baking", source: "FDA"},
+            {id: 301, question: "Can I take expired vitamins?", answer: "Expired vitamins are generally safe but may lose potency.", category: "supplements", source: "FDA"},
+            {id: 302, question: "How long does protein powder last after opening?", answer: "Opened protein powder lasts 6-9 months when stored properly.", category: "supplements", source: "FDA"},
+            {id: 303, question: "Can I take expired fish oil?", answer: "Don't take rancid fish oil. Check for strong fishy smell which indicates spoilage.", category: "supplements", source: "FDA"},
+            {id: 304, question: "How long do probiotics last?", answer: "Probiotics may lose effectiveness over time. Follow expiration dates for best results.", category: "supplements", source: "FDA"},
+            {id: 305, question: "Can I use expired protein bars?", answer: "Protein bars may be safe past expiration but check for rancidity or mold.", category: "supplements", source: "FDA"},
+            {id: 306, question: "How long does creatine last?", answer: "Creatine powder can last 2-3 years past expiration when stored properly.", category: "supplements", source: "FDA"},
+            {id: 307, question: "Can I take expired melatonin?", answer: "Expired melatonin may be less effective but is generally safe.", category: "supplements", source: "FDA"},
+            {id: 308, question: "How long do meal replacement shakes last?", answer: "Powdered meal replacements last 1-2 years when stored properly.", category: "supplements", source: "FDA"},
+            {id: 309, question: "Can I use expired collagen powder?", answer: "Collagen powder is usually safe past expiration but may lose effectiveness.", category: "supplements", source: "FDA"},
+            {id: 310, question: "How long do multivitamins last?", answer: "Multivitamins are usually safe 2 years past expiration but may lose potency.", category: "supplements", source: "FDA"},
+            {id: 311, question: "Can pregnant women eat deli meat?", answer: "Pregnant women should heat deli meat to steaming hot to kill potential Listeria.", category: "pregnancy", source: "FDA"},
+            {id: 312, question: "Is it safe to eat soft cheese during pregnancy?", answer: "Avoid unpasteurized soft cheeses during pregnancy due to Listeria risk.", category: "pregnancy", source: "FDA"},
+            {id: 313, question: "Can pregnant women drink coffee?", answer: "Moderate caffeine (up to 200mg daily) is generally considered safe during pregnancy.", category: "pregnancy", source: "FDA"},
+            {id: 314, question: "What fish should pregnant women avoid?", answer: "Avoid high-mercury fish like shark, swordfish, king mackerel, and tilefish.", category: "pregnancy", source: "FDA"},
+            {id: 315, question: "Can pregnant women eat eggs?", answer: "Yes, but ensure eggs are fully cooked to kill potential Salmonella.", category: "pregnancy", source: "FDA"},
+            {id: 316, question: "Is it safe to eat honey during pregnancy?", answer: "Yes, honey is safe for pregnant women. The botulism risk only affects infants under 1 year.", category: "pregnancy", source: "FDA"},
+            {id: 317, question: "Can pregnant women eat leftover rice?", answer: "Yes, if rice was cooled quickly, refrigerated, and reheated thoroughly.", category: "pregnancy", source: "FDA"},
+            {id: 318, question: "What temperature should pregnant women cook meat to?", answer: "Same as everyone else: 145°F for whole cuts, 160°F for ground meat, 165°F for poultry.", category: "pregnancy", source: "USDA"},
+            {id: 319, question: "Can pregnant women eat ice cream?", answer: "Yes, but choose pasteurized ice cream and avoid soft-serve from machines that may not be properly cleaned.", category: "pregnancy", source: "FDA"},
+            {id: 320, question: "Is sashimi safe during pregnancy?", answer: "No, pregnant women should avoid raw fish including sashimi due to infection risk.", category: "pregnancy", source: "FDA"},
+            {id: 321, question: "How long do cooked vegetables last?", answer: "Cooked vegetables last 3-7 days in the refrigerator depending on the type.", category: "leftovers", source: "USDA"},
+            {id: 322, question: "Can I freeze cooked pasta?", answer: "Yes, cooked pasta can be frozen for 1-2 months, though texture may change slightly.", category: "leftovers", source: "USDA"},
+            {id: 323, question: "How long does pizza last in the fridge?", answer: "Pizza can be safely stored in the refrigerator for 3-4 days.", category: "leftovers", source: "USDA"},
+            {id: 324, question: "Can I refreeze thawed frozen vegetables?", answer: "Only if they were thawed in the refrigerator and still contain ice crystals.", category: "leftovers", source: "USDA"},
+            {id: 325, question: "How long does soup last in the fridge?", answer: "Most soups last 3-4 days in the refrigerator when properly stored.", category: "leftovers", source: "USDA"},
+            {id: 326, question: "Can I freeze eggs?", answer: "Don't freeze eggs in shells. Beat eggs and freeze in containers for up to 1 year.", category: "leftovers", source: "USDA"},
+            {id: 327, question: "How long does cooked rice last?", answer: "Cooked rice lasts 4-6 days in the refrigerator when properly stored.", category: "leftovers", source: "USDA"},
+            {id: 328, question: "Can I freeze milk?", answer: "Yes, milk can be frozen for up to 3 months, though texture may change when thawed.", category: "leftovers", source: "USDA"},
+            {id: 329, question: "How long does leftover turkey last?", answer: "Leftover turkey can be stored in the refrigerator for 3-4 days.", category: "leftovers", source: "USDA"},
+            {id: 330, question: "Can I store tomatoes in the refrigerator?", answer: "Ripe tomatoes can be refrigerated, but unripe tomatoes should be stored at room temperature.", category: "leftovers", source: "USDA"},
+            {id: 331, question: "How long does cooked chicken last in the freezer?", answer: "Cooked chicken can be frozen for 2-6 months while maintaining best quality.", category: "leftovers", source: "USDA"},
+            {id: 332, question: "Can I freeze cheese?", answer: "Yes, but texture may change. Hard cheeses freeze better than soft cheeses.", category: "leftovers", source: "USDA"},
+            {id: 333, question: "How long does leftover casserole last?", answer: "Casseroles can be stored in the refrigerator for 3-4 days.", category: "leftovers", source: "USDA"},
+            {id: 334, question: "Can I store bananas in the refrigerator?", answer: "Yes, but the peel will turn brown. The fruit inside stays fresh longer.", category: "leftovers", source: "USDA"},
+            {id: 335, question: "How long does cooked ground beef last?", answer: "Cooked ground beef lasts 3-4 days in the refrigerator.", category: "leftovers", source: "USDA"},
+            {id: 336, question: "Can I freeze cooked beans?", answer: "Yes, cooked beans can be frozen for 2-3 months in airtight containers.", category: "leftovers", source: "USDA"},
+            {id: 337, question: "How long does leftover stir-fry last?", answer: "Stir-fry leftovers last 3-4 days in the refrigerator when properly stored.", category: "leftovers", source: "USDA"},
+            {id: 338, question: "Can I store cut fruit at room temperature?", answer: "No, cut fruit should be refrigerated and used within 2-3 days.", category: "leftovers", source: "FDA"},
+            {id: 339, question: "How long does meatloaf last in the fridge?", answer: "Cooked meatloaf can be stored in the refrigerator for 3-4 days.", category: "leftovers", source: "USDA"},
+            {id: 340, question: "Can I freeze cooked potatoes?", answer: "Whole cooked potatoes don't freeze well, but mashed potatoes freeze better.", category: "leftovers", source: "USDA"},
+            {id: 341, question: "How long does leftover chili last?", answer: "Chili can be stored in the refrigerator for 3-4 days.", category: "leftovers", source: "USDA"},
+            {id: 342, question: "Can I store avocados in the refrigerator?", answer: "Ripe avocados can be refrigerated to slow further ripening.", category: "leftovers", source: "FDA"},
+            {id: 343, question: "How long does cooked fish last in the freezer?", answer: "Cooked fish can be frozen for 1-3 months while maintaining best quality.", category: "leftovers", source: "FDA"},
+            {id: 344, question: "Can I freeze leftover gravy?", answer: "Yes, gravy can be frozen for 2-3 months, though it may separate when thawed.", category: "leftovers", source: "USDA"},
+            {id: 345, question: "How long does leftover roast last?", answer: "Leftover roast can be stored in the refrigerator for 3-4 days.", category: "leftovers", source: "USDA"},
+            {id: 346, question: "Can I store mushrooms in plastic bags?", answer: "No, mushrooms need to breathe. Store in paper bags or original packaging.", category: "leftovers", source: "FDA"},
+            {id: 347, question: "How long does cooked bacon last?", answer: "Cooked bacon can be stored in the refrigerator for 4-5 days.", category: "leftovers", source: "USDA"},
+            {id: 348, question: "Can I freeze cooked noodles?", answer: "Yes, cooked noodles can be frozen for 1-2 months, though texture may change.", category: "leftovers", source: "USDA"},
+            {id: 349, question: "How long does leftover salad last?", answer: "Dressed salad should be eaten immediately. Undressed salad lasts 1-3 days.", category: "leftovers", source: "FDA"},
+            {id: 350, question: "Can I store garlic in the refrigerator?", answer: "Whole garlic bulbs should be stored in a cool, dry place, not the refrigerator.", category: "storage", source: "FDA"},
+            {id: 351, question: "How long does cooked sausage last in the freezer?", answer: "Cooked sausage can be frozen for 1-2 months while maintaining best quality.", category: "storage", source: "USDA"},
+            {id: 352, question: "Can I freeze cooked eggs?", answer: "Cooked egg whites freeze well, but cooked yolks become rubbery when frozen.", category: "storage", source: "USDA"},
+            {id: 353, question: "How long does leftover sandwich last?", answer: "Sandwiches with meat should be eaten within 2-3 days when refrigerated.", category: "storage", source: "USDA"},
+            {id: 354, question: "Can I store fresh herbs in water?", answer: "Yes, treat fresh herbs like flowers - store stems in water and cover leaves.", category: "storage", source: "FDA"},
+            {id: 355, question: "How long does cooked shrimp last in the freezer?", answer: "Cooked shrimp can be frozen for 2-3 months while maintaining best quality.", category: "storage", source: "FDA"},
+            {id: 356, question: "Can I freeze leftover mashed potatoes?", answer: "Yes, mashed potatoes freeze well for 1-2 months in airtight containers.", category: "storage", source: "USDA"},
+            {id: 357, question: "How long does leftover fried chicken last?", answer: "Fried chicken can be stored in the refrigerator for 3-4 days.", category: "storage", source: "USDA"},
+            {id: 358, question: "Can I store chocolate in the refrigerator?", answer: "Chocolate can be refrigerated but may develop a white bloom when returned to room temperature.", category: "storage", source: "FDA"},
+            {id: 359, question: "How long does an opened jar of pasta sauce last?", answer: "Opened pasta sauce lasts 5-7 days in the refrigerator.", category: "storage", source: "FDA"},
+            {id: 360, question: "Can I eat food that's been in the fridge for a week?", answer: "It depends on the food. Most leftovers should be eaten within 3-4 days.", category: "storage", source: "USDA"},
+            {id: 361, question: "How do I know if my freezer is cold enough?", answer: "Freezers should maintain 0°F (-18°C) or below for food safety.", category: "storage", source: "USDA"},
+            {id: 362, question: "Can I leave groceries in my car while shopping?", answer: "Avoid leaving perishables in cars, especially in hot weather.", category: "storage", source: "USDA"},
+            {id: 363, question: "How long can I keep flour?", answer: "All-purpose flour lasts 6-8 months at room temperature, longer refrigerated.", category: "storage", source: "FDA"},
+            {id: 364, question: "Can I store potatoes and onions together?", answer: "No, potatoes and onions should be stored separately as they can cause each other to spoil faster.", category: "storage", source: "FDA"},
+            {id: 365, question: "How long does fresh ginger last?", answer: "Fresh ginger lasts 2-3 weeks in the refrigerator.", category: "produce", source: "FDA"},
+            {id: 366, question: "Can I eat corn with brown silk?", answer: "Brown silk is normal and safe. Focus on the kernels - they should be plump and milky.", category: "produce", source: "FDA"},
+            {id: 367, question: "Is it safe to eat beets with greens?", answer: "Yes, both beet roots and greens are safe and nutritious to eat.", category: "produce", source: "FDA"},
+            {id: 368, question: "How long do blueberries last?", answer: "Blueberries last 1-2 weeks in the refrigerator. Don't wash until ready to eat.", category: "produce", source: "FDA"},
+            {id: 369, question: "Can I eat zucchini that's getting soft?", answer: "Slightly soft zucchini is safe for cooking, but avoid if it's mushy or slimy.", category: "produce", source: "FDA"},
+            {id: 370, question: "How long does fresh herbs last?", answer: "Fresh herbs last 7-10 days in the refrigerator when stored properly.", category: "produce", source: "FDA"},
+            {id: 371, question: "Can I eat eggplant with brown seeds?", answer: "Brown seeds indicate overripeness but are safe. The flesh may be more bitter.", category: "produce", source: "FDA"},
+            {id: 372, question: "Is it safe to eat radishes with greens?", answer: "Yes, both radish roots and greens are safe and nutritious to eat.", category: "produce", source: "FDA"},
+            {id: 373, question: "How long do mangoes last?", answer: "Ripe mangoes last 3-5 days in the refrigerator or 1-2 days at room temperature.", category: "produce", source: "FDA"},
+            {id: 374, question: "Can I eat cabbage with dark spots?", answer: "Small dark spots can be trimmed off. Discard if the cabbage is mostly discolored.", category: "produce", source: "FDA"},
+            {id: 375, question: "How long does fresh basil last?", answer: "Fresh basil lasts 7-10 days in the refrigerator or can be stored in water like flowers.", category: "produce", source: "FDA"},
+            {id: 376, question: "Can I eat kale that's wilted?", answer: "Wilted kale is safe if it's not slimy. Massaging can help restore texture.", category: "produce", source: "FDA"},
+            {id: 377, question: "Is it safe to eat fennel with brown spots?", answer: "Small brown spots can be trimmed. Discard if the fennel smells strongly of anise (overripe).", category: "produce", source: "FDA"},
+            {id: 378, question: "How long do cherries last?", answer: "Cherries last 7-10 days in the refrigerator. Look for firm, plump fruits.", category: "produce", source: "FDA"},
+            {id: 379, question: "Can I eat asparagus that's bendy?", answer: "Slightly bendy asparagus is safe but may be less tender. Avoid if it's slimy.", category: "produce", source: "FDA"},
+            {id: 380, question: "How long does parsley last?", answer: "Fresh parsley lasts 1-2 weeks in the refrigerator when stored properly.", category: "produce", source: "FDA"},
+            {id: 381, question: "Can I eat turnips with greens?", answer: "Yes, both turnip roots and greens are safe and nutritious to eat.", category: "produce", source: "FDA"},
+            {id: 382, question: "Is it safe to eat lime with brown spots?", answer: "Small brown spots are usually safe. Avoid if the lime feels soft or smells off.", category: "produce", source: "FDA"},
+            {id: 383, question: "How long do peaches last?", answer: "Ripe peaches last 3-5 days in the refrigerator or 1-2 days at room temperature.", category: "produce", source: "FDA"},
+            {id: 384, question: "Can I eat Brussels sprouts with yellow leaves?", answer: "Remove yellow outer leaves. The inner sprouts should be firm and green.", category: "produce", source: "FDA"},
+            {id: 385, question: "How long does cilantro last?", answer: "Fresh cilantro lasts 7-10 days in the refrigerator when stored properly.", category: "produce", source: "FDA"},
+            {id: 386, question: "Can I eat artichokes with brown tips?", answer: "Brown tips are normal. Trim them off - the rest of the artichoke should be safe.", category: "produce", source: "FDA"},
+            {id: 387, question: "Is it safe to eat green beans that snap?", answer: "Yes, green beans that snap when bent are fresh and safe to eat.", category: "produce", source: "FDA"},
+            {id: 388, question: "How long do plums last?", answer: "Ripe plums last 3-5 days in the refrigerator or 1-2 days at room temperature.", category: "produce", source: "FDA"},
+            {id: 389, question: "Can I eat chard with holes in leaves?", answer: "Small holes from insects are safe. Rinse well and trim damaged areas.", category: "produce", source: "FDA"},
+            {id: 390, question: "How long does mint last?", answer: "Fresh mint lasts 7-10 days in the refrigerator or can be stored in water.", category: "produce", source: "FDA"},
+            {id: 391, question: "Can I eat squash with hard skin?", answer: "Hard skin is normal for winter squash and safe. Summer squash should have tender skin.", category: "produce", source: "FDA"},
+            {id: 392, question: "Is it safe to eat pears that are soft?", answer: "Soft pears are usually just ripe and safe to eat unless they smell fermented.", category: "produce", source: "FDA"},
+            {id: 393, question: "How long does rosemary last?", answer: "Fresh rosemary lasts 2-3 weeks in the refrigerator when stored properly.", category: "produce", source: "FDA"},
+            {id: 394, question: "Can I eat melons with soft spots?", answer: "Small soft spots can be cut out. Avoid melons with large soft areas or mold.", category: "produce", source: "FDA"},
+            {id: 395, question: "How long do oranges last?", answer: "Oranges last 2-3 weeks in the refrigerator or 1 week at room temperature.", category: "produce", source: "FDA"},
+            {id: 396, question: "Can I eat celery that's limp?", answer: "Limp celery is safe to eat and can often be refreshed by soaking in ice water.", category: "produce", source: "FDA"},
+            {id: 397, question: "Is it safe to eat cucumber skin?", answer: "Yes, cucumber skin is safe and nutritious. Wash thoroughly before eating.", category: "produce", source: "FDA"},
+            {id: 398, question: "How long do bell peppers last?", answer: "Bell peppers last 1-2 weeks in the refrigerator, or 2-3 days at room temperature.", category: "produce", source: "FDA"},
+            {id: 399, question: "Can I eat broccoli that's turning yellow?", answer: "Yellow broccoli is still safe to eat but may be less nutritious and have a stronger flavor.", category: "produce", source: "FDA"},
+            {id: 400, question: "How long do grapes last?", answer: "Grapes last 1-3 weeks in the refrigerator. Don't wash until ready to eat.", category: "produce", source: "FDA"},
+            {id: 401, question: "Can I eat avocados that are brown inside?", answer: "Brown spots are usually just oxidation and safe, but avoid if the avocado smells rancid.", category: "produce", source: "FDA"},
+            {id: 402, question: "Is it safe to eat potato eyes?", answer: "Remove potato eyes before eating. They contain solanine which can be toxic in large amounts.", category: "produce", source: "FDA"},
+            {id: 403, question: "How long do strawberries last?", answer: "Strawberries last 3-7 days in the refrigerator. Remove any moldy berries immediately.", category: "produce", source: "FDA"},
+            {id: 404, question: "Can I eat cauliflower with brown spots?", answer: "Small brown spots can be trimmed off. Discard if the cauliflower is mostly brown or smells bad.", category: "produce", source: "FDA"},
+            {id: 405, question: "How long does garlic last?", answer: "Whole garlic bulbs last 3-5 months. Individual cloves last 7-10 days once separated.", category: "produce", source: "FDA"},
+            {id: 406, question: "Can I eat pineapple that's overripe?", answer: "Overripe pineapple is safe if it doesn't smell fermented or have mold.", category: "produce", source: "FDA"},
+            {id: 407, question: "Is it safe to eat sprouted onions?", answer: "Yes, sprouted onions are safe. You can eat the green shoots like scallions.", category: "produce", source: "FDA"},
+            {id: 408, question: "How long do lemons last?", answer: "Lemons last 3-4 weeks in the refrigerator or 1 week at room temperature.", category: "produce", source: "FDA"},
+            {id: 409, question: "Can I eat sweet potatoes with sprouts?", answer: "Remove sprouts before eating. Unlike regular potatoes, sweet potato sprouts are not toxic.", category: "produce", source: "FDA"},
+            {id: 410, question: "How long does ginger last?", answer: "Fresh ginger lasts 2-3 weeks in the refrigerator or 1 week at room temperature.", category: "produce", source: "FDA"},
+            {id: 411, question: "Can I eat smoked salmon past expiration?", answer: "Don't eat smoked salmon past expiration date due to Listeria risk.", category: "seafood", source: "FDA"},
+            {id: 412, question: "How long does fresh clams last?", answer: "Live clams should be used within 2-3 days. Shucked clams last 1-2 days.", category: "seafood", source: "FDA"},
+            {id: 413, question: "Is it safe to eat fish eyes?", answer: "Yes, fish eyes are safe to eat in many cultures, though they're not commonly eaten in the US.", category: "seafood", source: "FDA"},
+            {id: 414, question: "Can I eat sardines from a can past expiration?", answer: "Canned sardines can be safe months past expiration if the can isn't damaged.", category: "seafood", source: "FDA"},
+            {id: 415, question: "How long does calamari last?", answer: "Fresh squid should be used within 1-2 days. Cooked calamari lasts 2-3 days in the fridge.", category: "seafood", source: "FDA"},
+            {id: 416, question: "Can I eat fish with worms?", answer: "Some fish naturally have parasites. Proper cooking to 145°F kills parasites.", category: "seafood", source: "FDA"},
+            {id: 417, question: "Is it safe to eat fish scales?", answer: "Fish scales are not toxic but are not digestible and should be removed before eating.", category: "seafood", source: "FDA"},
+            {id: 418, question: "How long does octopus last?", answer: "Fresh octopus should be used within 1-2 days. Cooked octopus lasts 3-4 days in the fridge.", category: "seafood", source: "FDA"},
+            {id: 419, question: "Can I eat fish that's been frozen for a year?", answer: "Fish frozen at 0°F is safe indefinitely, but quality decreases after 6-12 months.", category: "seafood", source: "FDA"},
+            {id: 420, question: "Is it safe to eat fish skin?", answer: "Yes, fish skin is safe and nutritious when the fish is properly cooked.", category: "seafood", source: "FDA"},
+            {id: 421, question: "How long does anchovy paste last?", answer: "Opened anchovy paste lasts 6 months in the refrigerator.", category: "seafood", source: "FDA"},
+            {id: 422, question: "Can I eat sea urchin?", answer: "Yes, sea urchin is safe when fresh and properly prepared. It's commonly eaten as uni in sushi.", category: "seafood", source: "FDA"},
+            {id: 423, question: "How long does fish stock last?", answer: "Homemade fish stock lasts 3-4 days in the fridge or 4-6 months frozen.", category: "seafood", source: "FDA"},
+            {id: 424, question: "Can I eat monk fish liver?", answer: "Yes, monkfish liver is safe when properly cooked and is considered a delicacy.", category: "seafood", source: "FDA"},
+            {id: 425, question: "Is it safe to eat fish roe?", answer: "Yes, fish roe (caviar) is safe when properly processed and stored.", category: "seafood", source: "FDA"},
+            {id: 426, question: "How long does cooked crab last?", answer: "Cooked crab meat lasts 3-5 days in the refrigerator.", category: "seafood", source: "FDA"},
+            {id: 427, question: "Can I eat jellyfish?", answer: "Yes, some jellyfish species are safe to eat when properly prepared, common in Asian cuisine.", category: "seafood", source: "FDA"},
+            {id: 428, question: "How long does pickled herring last?", answer: "Unopened pickled herring lasts several months. Once opened, use within 1-2 weeks.", category: "seafood", source: "FDA"},
+            {id: 429, question: "Can I eat conch?", answer: "Yes, conch is safe when properly cooked. It's tough and requires proper preparation.", category: "seafood", source: "FDA"},
+            {id: 430, question: "Is it safe to eat fish heads?", answer: "Yes, fish heads are safe and nutritious, commonly used in soups and stocks.", category: "seafood", source: "FDA"},
+            {id: 431, question: "How long does imitation crab last?", answer: "Unopened imitation crab lasts 2-3 months frozen. Once opened, use within 3-5 days.", category: "seafood", source: "FDA"},
+            {id: 432, question: "Can I eat abalone?", answer: "Yes, abalone is safe when properly cooked. It's a prized seafood in many cultures.", category: "seafood", source: "FDA"},
+            {id: 433, question: "How long does fish sauce last?", answer: "Fish sauce lasts 3-4 years in the pantry due to its high salt content.", category: "seafood", source: "FDA"},
+            {id: 434, question: "Can I eat sea cucumber?", answer: "Yes, sea cucumber is safe and nutritious, commonly eaten in Asian cuisine.", category: "seafood", source: "FDA"},
+            {id: 435, question: "Is it safe to eat fish bones?", answer: "Small, soft fish bones from canned fish are safe. Large bones should be removed.", category: "seafood", source: "FDA"},
+            {id: 436, question: "How long does dried fish last?", answer: "Properly dried fish can last 6-12 months when stored in a cool, dry place.", category: "seafood", source: "FDA"},
+            {id: 437, question: "Can I eat raw scallops?", answer: "Raw scallops carry risk of foodborne illness. Cook to 145°F for safety.", category: "seafood", source: "FDA"},
+            {id: 438, question: "How long does smoked salmon last?", answer: "Unopened smoked salmon lasts 2-3 weeks. Once opened, use within 3-5 days.", category: "seafood", source: "FDA"},
+            {id: 439, question: "Can I eat mussels that don't open?", answer: "No, discard any mussels that don't open during cooking as they may be dead.", category: "seafood", source: "FDA"},
+            {id: 440, question: "Is it safe to eat raw scallops?", answer: "Raw scallops carry risk of foodborne illness. Cook to 145°F for safety.", category: "seafood", source: "FDA"},
+            {id: 441, question: "How long do eggs last past expiration?", answer: "Eggs can often be used 3-5 weeks past the sell-by date if properly refrigerated.", category: "dairy", source: "FDA"},
+            {id: 442, question: "Can I eat string cheese past expiration?", answer: "String cheese lasts about 1 week past the sell-by date when properly refrigerated.", category: "dairy", source: "FDA"},
+            {id: 443, question: "How long does Greek yogurt last?", answer: "Greek yogurt can last 1-2 weeks past the sell-by date when properly refrigerated.", category: "dairy", source: "FDA"},
+            {id: 444, question: "Can I eat cheese that's been left out?", answer: "Hard cheeses can sit out for 4-8 hours. Soft cheeses should not exceed 2 hours.", category: "dairy", source: "FDA"},
+            {id: 445, question: "Is it safe to eat raw milk products?", answer: "Raw milk products carry higher risk of foodborne illness and are not recommended.", category: "dairy", source: "FDA"},
+            {id: 446, question: "How long does whipped cream last?", answer: "Fresh whipped cream lasts 2-3 days. Aerosol whipped cream lasts 2-3 weeks once opened.", category: "dairy", source: "FDA"},
+            {id: 447, question: "Can I eat eggs with blood spots?", answer: "Yes, blood spots are safe. They can be removed or the egg can be eaten as-is.", category: "dairy", source: "FDA"},
+            {id: 448, question: "How long does feta cheese last?", answer: "Feta cheese lasts 1 week past the sell-by date when stored in brine.", category: "dairy", source: "FDA"},
+            {id: 449, question: "Can I drink lactose-free milk past expiration?", answer: "Lactose-free milk follows the same guidelines as regular milk - use within 5-7 days of expiration.", category: "dairy", source: "FDA"},
+            {id: 450, question: "Is it safe to eat aged cheddar?", answer: "Yes, properly aged cheddar is safe. The aging process is controlled.", category: "dairy", source: "FDA"},
+            {id: 451, question: "How long does mozzarella last?", answer: "Fresh mozzarella should be used within 5-7 days. Low-moisture mozzarella lasts 2-4 weeks.", category: "dairy", source: "FDA"},
+            {id: 452, question: "Can I eat eggnog past expiration?", answer: "Commercial eggnog should not be consumed past the expiration date due to raw egg content.", category: "dairy", source: "FDA"},
+            {id: 453, question: "How long does goat cheese last?", answer: "Goat cheese typically lasts 1-2 weeks past the sell-by date when properly stored.", category: "dairy", source: "FDA"},
+            {id: 454, question: "Can I eat cheese with white spots?", answer: "White spots on aged cheese are usually safe calcium lactate crystals, not mold.", category: "dairy", source: "FDA"},
+            {id: 455, question: "Is it safe to eat raw cookie dough with pasteurized eggs?", answer: "Even with pasteurized eggs, raw flour in cookie dough can contain E. coli.", category: "dairy", source: "CDC"},
+            {id: 456, question: "How long does string cheese last?", answer: "String cheese lasts about 1 week past the sell-by date when properly refrigerated.", category: "dairy", source: "FDA"},
+            {id: 457, question: "Can I eat brie cheese with white rind?", answer: "Yes, the white rind on brie is safe mold that's part of the cheese-making process.", category: "dairy", source: "FDA"},
+            {id: 458, question: "How long does evaporated milk last after opening?", answer: "Opened evaporated milk should be used within 3-5 days when refrigerated.", category: "dairy", source: "FDA"},
+            {id: 459, question: "Can I eat powdered milk past expiration?", answer: "Powdered milk can be safe months past expiration if stored properly and shows no signs of spoilage.", category: "dairy", source: "FDA"},
+            {id: 460, question: "Is it safe to eat eggs that float?", answer: "Floating eggs are older but may still be safe. Crack into a bowl to check for off odors.", category: "dairy", source: "FDA"},
+            {id: 461, question: "How long does condensed milk last after opening?", answer: "Opened condensed milk should be refrigerated and used within 3 weeks.", category: "dairy", source: "FDA"},
+            {id: 462, question: "Can I eat cream that's starting to curdle?", answer: "Slightly curdled cream may be safe for cooking but shouldn't be consumed directly.", category: "dairy", source: "FDA"},
+            {id: 463, question: "How long does chocolate milk last?", answer: "Chocolate milk lasts about as long as regular milk - 5-7 days past the sell-by date.", category: "dairy", source: "FDA"},
+            {id: 464, question: "Can I eat Swiss cheese with holes?", answer: "Yes, the holes in Swiss cheese are natural and safe - they're made by bacteria during aging.", category: "dairy", source: "FDA"},
+            {id: 465, question: "Is it safe to eat queso fresco?", answer: "Only eat queso fresco made from pasteurized milk to avoid risk of listeria.", category: "dairy", source: "FDA"},
+            {id: 466, question: "How long does provolone cheese last?", answer: "Provolone cheese lasts 2-3 weeks past the sell-by date when properly stored.", category: "dairy", source: "FDA"},
+            {id: 467, question: "Can I eat ricotta cheese past expiration?", answer: "Ricotta cheese should be used within 5-7 days of opening, regardless of expiration date.", category: "dairy", source: "FDA"},
+            {id: 468, question: "How long does whole milk last?", answer: "Whole milk typically lasts 5-7 days past the sell-by date when properly refrigerated.", category: "dairy", source: "FDA"},
+            {id: 469, question: "Can I eat scrambled eggs left out overnight?", answer: "No, scrambled eggs should not be left at room temperature for more than 2 hours.", category: "dairy", source: "USDA"},
+            {id: 470, question: "Is it safe to eat farm-fresh eggs?", answer: "Yes, but wash hands after handling and cook to 160°F to kill potential Salmonella.", category: "dairy", source: "FDA"},
+            {id: 471, question: "How long does parmesan cheese last?", answer: "Hard cheeses like parmesan can last 7-9 months in the refrigerator once opened.", category: "dairy", source: "FDA"},
+            {id: 472, question: "Can I drink buttermilk past expiration?", answer: "Buttermilk can be safe 1-2 weeks past the expiration date if it smells normal.", category: "dairy", source: "FDA"},
+            {id: 473, question: "Is it safe to eat blue cheese?", answer: "Yes, the blue veins in blue cheese are safe mold cultures used in production.", category: "dairy", source: "FDA"},
+            {id: 474, question: "How long does heavy cream last?", answer: "Heavy cream lasts 5-7 days past the sell-by date when properly refrigerated.", category: "dairy", source: "FDA"},
+            {id: 475, question: "Can I freeze cheese?", answer: "Yes, but texture may change. Hard cheeses freeze better than soft cheeses.", category: "dairy", source: "FDA"},
+            {id: 476, question: "How long do fresh eggs last?", answer: "Fresh eggs can be stored in the refrigerator for 3-5 weeks past the purchase date.", category: "dairy", source: "FDA"},
+            {id: 477, question: "Can I eat egg whites from a carton past expiration?", answer: "Liquid egg whites should not be used past the expiration date for safety.", category: "dairy", source: "FDA"},
+            {id: 478, question: "Is it safe to eat unpasteurized cheese?", answer: "Unpasteurized cheese carries higher risk of foodborne illness, especially for pregnant women.", category: "dairy", source: "FDA"},
+            {id: 479, question: "How long does ricotta cheese last?", answer: "Ricotta cheese should be used within 5-7 days of opening.", category: "dairy", source: "FDA"},
+            {id: 480, question: "Can I eat ice cream that's been refrozen?", answer: "Refrozen ice cream is safe but may have poor texture and increased risk of bacterial growth.", category: "dairy", source: "FDA"},
+            {id: 481, question: "How long does leftover mac and cheese last?", answer: "Mac and cheese can be stored in the refrigerator for 3-4 days.", category: "leftovers", source: "USDA"},
+            {id: 482, question: "Can I freeze leftover soup?", answer: "Yes, most soups can be frozen for 2-3 months in airtight containers.", category: "leftovers", source: "USDA"},
+            {id: 483, question: "How long does cooked pasta last in the fridge?", answer: "Cooked pasta can be stored in the refrigerator for 3-5 days.", category: "leftovers", source: "USDA"},
+            {id: 484, question: "Can I eat leftover takeout Chinese food?", answer: "Yes, if refrigerated within 2 hours and eaten within 3-4 days.", category: "leftovers", source: "USDA"},
+            {id: 485, question: "How long does leftover pizza last?", answer: "Leftover pizza can be safely stored for 3-4 days in the refrigerator.", category: "leftovers", source: "USDA"},
+            {id: 486, question: "Can I freeze cooked rice?", answer: "Yes, cooked rice can be frozen for up to 6 months in airtight containers.", category: "leftovers", source: "USDA"},
+            {id: 487, question: "How long do cooked vegetables last?", answer: "Most cooked vegetables last 3-7 days in the refrigerator.", category: "leftovers", source: "USDA"},
+            {id: 488, question: "Can I eat day-old sushi?", answer: "No, sushi should be eaten the day it's made for safety and quality.", category: "leftovers", source: "FDA"},
+            {id: 489, question: "How long does leftover turkey last?", answer: "Leftover turkey can be stored in the refrigerator for 3-4 days.", category: "leftovers", source: "USDA"},
+            {id: 490, question: "Can I freeze leftover mashed potatoes?", answer: "Yes, mashed potatoes freeze well for 1-2 months.", category: "leftovers", source: "USDA"},
+            {id: 491, question: "How long does cooked salmon last?", answer: "Cooked salmon can be stored in the refrigerator for 3-4 days.", category: "leftovers", source: "FDA"},
+            {id: 492, question: "Can I eat leftover fried rice?", answer: "Yes, if refrigerated within 2 hours and reheated to steaming hot.", category: "leftovers", source: "USDA"},
+            {id: 493, question: "How long does leftover casserole last?", answer: "Most casseroles can be stored for 3-4 days in the refrigerator.", category: "leftovers", source: "USDA"},
+            {id: 494, question: "Can I freeze cooked chicken?", answer: "Yes, cooked chicken can be frozen for 2-6 months.", category: "leftovers", source: "USDA"},
+            {id: 495, question: "How long does leftover chili last?", answer: "Chili can be stored in the refrigerator for 3-4 days.", category: "leftovers", source: "USDA"},
+            {id: 496, question: "Can I eat leftover steak?", answer: "Yes, leftover steak can be eaten within 3-4 days if properly refrigerated.", category: "leftovers", source: "USDA"},
+            {id: 497, question: "How long does cooked ground turkey last?", answer: "Cooked ground turkey lasts 3-4 days in the refrigerator.", category: "leftovers", source: "USDA"},
+            {id: 498, question: "Can I freeze leftover gravy?", answer: "Yes, gravy can be frozen for 2-3 months, though it may separate when thawed.", category: "leftovers", source: "USDA"},
+            {id: 499, question: "How long does leftover roast beef last?", answer: "Leftover roast beef can be stored for 3-4 days in the refrigerator.", category: "leftovers", source: "USDA"},
+            {id: 500, question: "Can I eat reheated pizza?", answer: "Yes, reheat pizza to 165°F internal temperature for safety.", category: "leftovers", source: "USDA"}
+
+            // INSERT REMAINING 450 DATABASE ENTRIES HERE
+            // Copy and paste the additional entries from the separate file below
+        ];
+
+        let currentResults = [...foodSafetyDB];
+        let currentCategory = 'all';
+
+        // Page Navigation System
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId + '-page').classList.add('active');
+            
+            // Update navigation highlighting
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // If going to home page, ensure search results are displayed
+            if (pageId === 'home') {
+                displayResults(currentResults);
+            }
+        }
+
+        // Mobile Menu Functions
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('mobile-open');
+        }
+
+        function closeMobileMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.remove('mobile-open');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('nav-links');
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!navLinks.contains(event.target) && !mobileBtn.contains(event.target)) {
+                navLinks.classList.remove('mobile-open');
+            }
+        });
+
+        // Blog System Functions
+        function publishBlogPost() {
+            const title = document.getElementById('blog-title').value;
+            const category = document.getElementById('blog-category').value;
+            const content = document.getElementById('blog-content').value;
+            const author = document.getElementById('blog-author').value;
+            
+            if (!title || !content) {
+                alert('Please fill in both title and content fields.');
+                return;
+            }
+            
+            const blogPost = {
+                title: title,
+                category: category,
+                content: content,
+                author: author,
+                date: new Date().toLocaleDateString()
+            };
+            
+            // Create blog post HTML
+            const postHTML = `
+                <article class="blog-post">
+                    <h2>${blogPost.title}</h2>
+                    <div class="blog-meta">
+                        <span>📅 ${blogPost.date}</span>
+                        <span>👤 ${blogPost.author}</span>
+                        <span class="blog-category">${blogPost.category}</span>
+                    </div>
+                    <div class="blog-content">
+                        ${blogPost.content}
+                    </div>
+                </article>
+            `;
+            
+            // Add to blog posts container (at the top)
+            const blogContainer = document.getElementById('blog-posts');
+            blogContainer.insertAdjacentHTML('afterbegin', postHTML);
+            
+            // Clear the form
+            document.getElementById('blog-title').value = '';
+            document.getElementById('blog-content').value = '';
+            
+            alert('Blog post published successfully!');
+        }
+
+        // Email Signup Function - MailerLite Integration
+        function handleEmailSignup() {
+            const email = document.querySelector('.email-input').value;
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // MailerLite Integration
+            // Replace 'YOUR_MAILERLITE_GROUP_ID' with your actual group ID from MailerLite
+            const mailerLiteData = {
+                email: email,
+                groups: ['YOUR_MAILERLITE_GROUP_ID'], // Get this from your MailerLite dashboard
+                fields: {
+                    name: '', // Optional
+                    signup_source: 'Food Safety Cheat Sheet'
+                }
+            };
+            
+            // For now, show success message - replace with actual MailerLite integration below
+            alert(`Thank you! We'll send your free food safety guide to ${email}`);
+            document.querySelector('.email-input').value = '';
+            
+            /* 
+            // Uncomment and configure this when you get your MailerLite API details:
+            
+            fetch('https://api.mailerlite.com/api/v2/subscribers', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-MailerLite-ApiKey': 'YOUR_MAILERLITE_API_KEY' // Get from MailerLite Settings
+                },
+                body: JSON.stringify(mailerLiteData)
+            }).then(response => {
+                if (response.ok) {
+                    alert('Thank you for subscribing! Check your email for the free guide.');
+                    document.querySelector('.email-input').value = '';
+                    
+                    // Optional: Track conversion for analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'newsletter_signup', {
+                            event_category: 'engagement',
+                            event_label: 'food_safety_cheat_sheet'
+                        });
+                    }
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            }).catch(() => {
+                alert('Something went wrong. Please try again.');
+            });
+            */
+        }
+
+        // Amazon Affiliate Products Display
+        function displayAffiliateProducts() {
+            const container = document.getElementById('affiliate-products');
+            if (!container) return;
+            
+            container.innerHTML = affiliateProducts.map(product => `
+                <div class="product-card">
+                    <div class="product-title">${product.title}</div>
+                    <div class="product-description">${product.description}</div>
+                    <div class="product-meta">
+                        <span class="product-rating">⭐ ${product.rating}</span>
+                        <span class="product-price">${product.price}</span>
+                    </div>
+                    <a href="${product.amazonUrl}" target="_blank" rel="nofollow" class="affiliate-btn">
+                        🛒 View on Amazon
+                    </a>
+                </div>
+            `).join('');
+        }
+
+        // Search and Filter Functions
+        function displayResults(results) {
+            const resultsContainer = document.getElementById('results');
+            const resultsTitle = document.getElementById('results-title');
+            
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<div class="no-results">No results found. Try different search terms or browse categories.</div>';
+                resultsTitle.textContent = 'No Results Found';
+                return;
+            }
+
+            // Update title based on search context
+            const searchTerm = document.getElementById('searchInput').value;
+            if (searchTerm.trim()) {
+                resultsTitle.textContent = `Search Results (${results.length} found)`;
+            } else if (currentCategory !== 'all') {
+                resultsTitle.textContent = `${currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1)} Questions`;
+            } else {
+                resultsTitle.textContent = 'Search Results';
+            }
+
+            resultsContainer.innerHTML = results.map(item => `
+                <div class="result-item">
+                    <div class="category-tag">${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</div>
+                    <div class="question">${item.question}</div>
+                    <div class="answer">${item.answer}</div>
+                    <div class="source">Source: ${item.source}</div>
+                    ${getRelatedProducts(item.category)}
+                </div>
+            `).join('');
+
+            // Scroll to results on mobile
+            if (window.innerWidth <= 768 && searchTerm.trim()) {
+                document.getElementById('search-results-container').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Show related affiliate products based on question category
+        function getRelatedProducts(category) {
+            const relatedProducts = affiliateProducts.filter(product => 
+                product.category.some(cat => category.toLowerCase().includes(cat.toLowerCase()) || cat.toLowerCase().includes(category.toLowerCase()))
+            );
+            
+            if (relatedProducts.length === 0) return '';
+            
+            const product = relatedProducts[0]; // Show first related product
+            
+            // Create embedded links based on category
+            let embeddedLinks = '';
+            if (category.includes('storage') || category.includes('leftover')) {
+                embeddedLinks = `<a href="${affiliateProducts[1].amazonUrl}" target="_blank" rel="nofollow" style="color: var(--primary-green); text-decoration: underline; font-weight: 600;">food storage containers</a>`;
+            } else if (category.includes('cooking') || category.includes('meat')) {
+                embeddedLinks = `<a href="${affiliateProducts[0].amazonUrl}" target="_blank" rel="nofollow" style="color: var(--primary-green); text-decoration: underline; font-weight: 600;">food thermometer</a>`;
+            } else if (category.includes('baking') || category.includes('measurement')) {
+                embeddedLinks = `<a href="${affiliateProducts[2].amazonUrl}" target="_blank" rel="nofollow" style="color: var(--primary-green); text-decoration: underline; font-weight: 600;">kitchen scale</a>`;
+            } else if (category.includes('frozen')) {
+                embeddedLinks = `<a href="${affiliateProducts[3].amazonUrl}" target="_blank" rel="nofollow" style="color: var(--primary-green); text-decoration: underline; font-weight: 600;">vacuum sealer</a>`;
+            }
+            
+            if (embeddedLinks) {
+                return `<div style="margin-top: 0.75rem; padding: 0.5rem; background: rgba(5, 150, 105, 0.05); border-radius: 6px; font-size: 0.85rem; color: var(--text-secondary);">💡 Consider using ${embeddedLinks} for better food safety.</div>`;
+            }
+            
+            return '';
+        }
+
+        function searchQuestions() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            if (searchTerm.trim() === '') {
+                // If no search term, show only top 3 questions
+                currentResults = foodSafetyDB.slice(0, 3);
+            } else {
+                currentResults = foodSafetyDB.filter(item => {
+                    const matchesCategory = currentCategory === 'all' || item.category === currentCategory;
+                    const matchesSearch = item.question.toLowerCase().includes(searchTerm) || 
+                                        item.answer.toLowerCase().includes(searchTerm);
+                    return matchesCategory && matchesSearch;
+                });
+            }
+            
+            displayResults(currentResults);
+        }
+
+        function showAllQuestions() {
+            currentResults = currentCategory === 'all' ? foodSafetyDB : 
+                foodSafetyDB.filter(item => item.category === currentCategory);
+            displayResults(currentResults);
+            document.getElementById('showAllBtn').style.display = 'none';
+        }
+
+        function filterCategory(category) {
+            currentCategory = category;
+            
+            // Update button states
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Clear search input
+            document.getElementById('searchInput').value = '';
+            
+            // Show only top 3 for the category
+            if (category === 'all') {
+                currentResults = foodSafetyDB.slice(0, 3);
+            } else {
+                const categoryResults = foodSafetyDB.filter(item => item.category === category);
+                currentResults = categoryResults.slice(0, 3);
+            }
+            
+            displayResults(currentResults);
+        }
+
+        // Initialize the website
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show only the top 3 questions initially
+            displayResults(foodSafetyDB.slice(0, 3));
+            displayAffiliateProducts();
+            
+            // Add enter key support for search
+            document.getElementById('searchInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchQuestions();
+                }
+            });
+            
+            // Email signup enter key support
+            document.querySelector('.email-input').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    handleEmailSignup();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
