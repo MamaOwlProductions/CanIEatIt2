@@ -38,6 +38,29 @@ collections:
           - {label: "Email Signup Title", name: "email_title", widget: "string", default: "🎁 Get Our FREE Food Safety Cheat Sheet!"}
           - {label: "Email Signup Text", name: "email_text", widget: "text", default: "Join 10,000+ people who get our weekly food safety tips and exclusive guides"}
 
+  - name: "products"
+    label: "Amazon Products"
+    files:
+      - file: "_data/products.yml"
+        label: "Affiliate Products"
+        name: "affiliate_products"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            fields:
+              - {label: "Product Name", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Amazon Product ID (ASIN)", name: "asin", widget: "string", hint: "Example: B01IHHLB3W (found in Amazon URL)"}
+              - {label: "Product Image", name: "image", widget: "image", required: false}
+              - {label: "Star Rating", name: "rating", widget: "string", default: "4.5/5"}
+              - {label: "Price", name: "price", widget: "string", default: "$19.99"}
+              - label: "Categories"
+                name: "category"
+                widget: "select"
+                multiple: true
+                options: ["cooking", "temperature", "meat", "storage", "leftovers", "containers", "baking", "measurement", "frozen", "preservation", "prep", "cutting", "monitoring"]
+
   - name: "settings"
     label: "Site Settings"
     files:
@@ -47,4 +70,11 @@ collections:
         fields:
           - {label: "Email", name: "email", widget: "string", default: "canieatit01@gmail.com"}
           - {label: "Support Email", name: "support_email", widget: "string", default: "canieatit01@gmail.com"}
-          - {label: "Partnership Email", name: "partnership_email", widget: "string", default: "canieatit01@gmail.com"}    
+          - {label: "Partnership Email", name: "partnership_email", widget: "string", default: "canieatit01@gmail.com"}
+      - file: "_data/settings.yml"
+        label: "General Settings"
+        name: "general"
+        fields:
+          - {label: "Amazon Affiliate ID", name: "amazon_affiliate_id", widget: "string", default: "canieatit06-20"}
+          - {label: "Google Analytics ID", name: "google_analytics", widget: "string", required: false}
+          - {label: "MailerLite Group ID", name: "mailerlite_group", widget: "string", default: "159030036571096614"}
