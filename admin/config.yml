@@ -29,12 +29,6 @@ collections:
           - {label: "Site Title", name: "site_title", widget: "string", default: "Can I Eat It?"}
           - {label: "Hero Headline", name: "hero_title", widget: "string", default: "Your Food Safety Questions, Answered"}
           - {label: "Hero Subtitle", name: "hero_subtitle", widget: "string", default: "Trusted information from CDC, FDA, and other health authorities"}
-          - label: "Statistics"
-            name: "stats"
-            widget: "list"
-            fields:
-              - {label: "Number", name: "number", widget: "string"}
-              - {label: "Label", name: "label", widget: "string"}
           - {label: "Email Signup Title", name: "email_title", widget: "string", default: "🎁 Get Our FREE Food Safety Cheat Sheet!"}
           - {label: "Email Signup Text", name: "email_text", widget: "text", default: "Join 10,000+ people who get our weekly food safety tips and exclusive guides"}
 
@@ -51,7 +45,7 @@ collections:
             fields:
               - {label: "Product Name", name: "title", widget: "string"}
               - {label: "Short Description", name: "description", widget: "text"}
-              - {label: "SiteStripe Affiliate Link", name: "affiliate_url", widget: "string", hint: "Paste the full SiteStripe link from Amazon (includes your affiliate ID)"}
+              - {label: "SiteStripe Affiliate Link", name: "affiliate_url", widget: "string", hint: "Paste the full SiteStripe link from Amazon"}
               - {label: "Amazon Image URL", name: "image_url", widget: "string", hint: "Right-click Amazon product image → Copy image address"}
               - {label: "Star Rating", name: "rating", widget: "string", default: "4.5/5"}
               - {label: "Price", name: "price", widget: "string", default: "$19.99"}
@@ -60,28 +54,7 @@ collections:
                 widget: "select"
                 multiple: true
                 options: ["cooking", "temperature", "meat", "storage", "leftovers", "containers", "baking", "measurement", "frozen", "preservation", "prep", "cutting", "monitoring"]
-              - {label: "Active", name: "active", widget: "boolean", default: true, hint: "Uncheck to hide this product"}: "products"
-    label: "Amazon Products"
-    files:
-      - file: "_data/products.yml"
-        label: "Affiliate Products"
-        name: "affiliate_products"
-        fields:
-          - label: "Products"
-            name: "products"
-            widget: "list"
-            fields:
-              - {label: "Product Name", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Amazon Product ID (ASIN)", name: "asin", widget: "string", hint: "Example: B01IHHLB3W (found in Amazon URL)"}
-              - {label: "Product Image", name: "image", widget: "image", required: false}
-              - {label: "Star Rating", name: "rating", widget: "string", default: "4.5/5"}
-              - {label: "Price", name: "price", widget: "string", default: "$19.99"}
-              - label: "Categories"
-                name: "category"
-                widget: "select"
-                multiple: true
-                options: ["cooking", "temperature", "meat", "storage", "leftovers", "containers", "baking", "measurement", "frozen", "preservation", "prep", "cutting", "monitoring"]
+              - {label: "Active", name: "active", widget: "boolean", default: true}
 
   - name: "settings"
     label: "Site Settings"
