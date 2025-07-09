@@ -1,36 +1,16 @@
 products:
-  - title: "ThermoPro TP03 Digital Instant Read Meat Thermometer"
-    description: "Fast & accurate digital food thermometer with 3-4 second readings"
-    affiliate_url: "https://www.amazon.com/dp/B01IHHLB3W?tag=canieatit06-20"
-    image_url: "https://m.media-amazon.com/images/I/61wOzLMlnfL._AC_SX522_.jpg"
-    rating: "4.5/5"
-    price: "$8.99"
-    category: ["cooking", "temperature", "meat"]
+  - rating: 4.5/5
+    price: "30.59"
     active: true
-    
-  - title: "Rubbermaid Brilliance Food Storage Containers"
-    description: "Airtight leak-proof containers, BPA-free with crystal clear lids"
-    affiliate_url: "https://www.amazon.com/dp/B01JCNEIC0?tag=canieatit06-20"
-    image_url: "https://m.media-amazon.com/images/I/81V7SjJZ2fL._AC_SX522_.jpg"
-    rating: "4.6/5"
-    price: "$49.99"
-    category: ["storage", "leftovers", "containers"]
-    active: true
-    
-  - title: "OXO Good Grips Food Scale"
-    description: "Precise measurements up to 11 lbs, easy to clean digital scale"
-    affiliate_url: "https://www.amazon.com/dp/B079D9B82W?tag=canieatit06-20"
-    image_url: "https://m.media-amazon.com/images/I/71QZmkgCzDL._AC_SX522_.jpg"
-    rating: "4.7/5"
-    price: "$49.95"
-    category: ["cooking", "baking", "measurement"]
-    active: true
-    
-  - title: "Taylor Digital Refrigerator Freezer Thermometer"
-    description: "Monitor fridge and freezer temperatures for optimal food safety"
-    affiliate_url: "https://www.amazon.com/dp/B00GRFHXVQ?tag=canieatit06-20"
-    image_url: "https://m.media-amazon.com/images/I/51ZvJgZ8VgL._AC_SX522_.jpg"
-    rating: "4.3/5"
-    price: "$12.99"
-    category: ["storage", "temperature", "monitoring"]
-    active: true
+    image_url: https://m.media-amazon.com/images/I/916z7AG53dL._AC_SX679_.jpg
+    affiliate_url: https://amzn.to/40bDk4S
+    title: Vtopmart 14 PCS Airtight Food Storage Containers Set, BPA Free Plastic
+      Kitchen Pantry Organizer
+    description: Help Organize your kitchen and pantry -- Imagine waking up every
+      morning, going to the kitchen to make some breakfast, now that everything
+      in your pantry is neatly organized and no longer cluttered, you can have
+      everything you want in no time, organizing makes life better and simpler!
+    category:
+      - storage
+      - containers
+      - preservation
