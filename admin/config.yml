@@ -2,74 +2,107 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images"
-public_folder: "/images"
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
 
 collections:
+  # Blog Posts Management
   - name: "blog"
-    label: "Blog Posts"
+    label: "📝 Blog Posts"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Category", name: "category", widget: "select", options: ["Food Safety Tips", "Storage Guides", "Cooking Safety", "Seasonal Safety", "Food Safety News"]}
+      - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Author", name: "author", widget: "string", default: "Food Safety Expert"}
+      - {label: "Category", name: "category", widget: "select", options: ["food-safety", "storage", "cooking", "seasonal", "news"]}
+      - {label: "Tags", name: "tags", widget: "list", allow_add: true}
       - {label: "Featured Image", name: "image", widget: "image", required: false}
-      - {label: "Post Content", name: "body", widget: "markdown"}
+      - {label: "Excerpt", name: "excerpt", widget: "text", hint: "Brief description for previews"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "SEO Description", name: "description", widget: "text", required: false}
 
+  # Pages Management  
   - name: "pages"
-    label: "Site Pages"
+    label: "📄 Pages"
     files:
-      - file: "index.html"
-        label: "Homepage"
-        name: "homepage"
+      - label: "About Page"
+        name: "about"
+        file: "about.md"
         fields:
-          - {label: "Site Title", name: "site_title", widget: "string", default: "Can I Eat It?"}
-          - {label: "Hero Headline", name: "hero_title", widget: "string", default: "Your Food Safety Questions, Answered"}
-          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "string", default: "Trusted information from CDC, FDA, and other health authorities"}
-          - {label: "Email Signup Title", name: "email_title", widget: "string", default: "🎁 Get Our FREE Food Safety Cheat Sheet!"}
-          - {label: "Email Signup Text", name: "email_text", widget: "text", default: "Join 10,000+ people who get our weekly food safety tips and exclusive guides"}
+          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      
+      - label: "Homepage"
+        name: "index"
+        file: "index.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "home"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Hero Title", name: "hero_title", widget: "string"}
+          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text"}
+          - {label: "Featured Questions", name: "featured_questions", widget: "list", allow_add: true}
 
+  # Food Safety Questions Database
+  - name: "questions"
+    label: "❓ Food Safety Questions"
+    folder: "_questions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Question", name: "title", widget: "string"}
+      - {label: "Answer", name: "answer", widget: "text"}
+      - {label: "Category", name: "category", widget: "select", options: ["storage", "cooking", "leftovers", "meat", "dairy", "produce", "seafood", "contamination", "frozen", "canned", "grains", "expiration", "pregnancy"]}
+      - {label: "Source", name: "source", widget: "select", options: ["USDA", "FDA", "CDC", "USDA Food Safety and Inspection Service"]}
+      - {label: "Related Products", name: "related_products", widget: "list", required: false}
+
+  # Affiliate Products Management
   - name: "products"
-    label: "Amazon Products"
-    files:
-      - file: "_data/products.yml"
-        label: "Affiliate Products"
-        name: "affiliate_products"
-        fields:
-          - label: "Products"
-            name: "products"
-            widget: "list"
-            fields:
-              - {label: "Product Name", name: "title", widget: "string"}
-              - {label: "Short Description", name: "description", widget: "text"}
-              - {label: "SiteStripe Affiliate Link", name: "affiliate_url", widget: "string", hint: "Paste the full SiteStripe link from Amazon"}
-              - {label: "Amazon Image URL", name: "image_url", widget: "string", hint: "Right-click Amazon product image → Copy image address"}
-              - {label: "Star Rating", name: "rating", widget: "string", default: "4.5/5"}
-              - {label: "Price", name: "price", widget: "string", default: "$19.99"}
-              - label: "Categories"
-                name: "category"
-                widget: "select"
-                multiple: true
-                options: ["cooking", "temperature", "meat", "storage", "leftovers", "containers", "baking", "measurement", "frozen", "preservation", "prep", "cutting", "monitoring"]
-              - {label: "Active", name: "active", widget: "boolean", default: true}
+    label: "🛒 Affiliate Products"
+    folder: "_products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Product Name", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Amazon ASIN", name: "asin", widget: "string", pattern: ['^[A-Z0-9]{10}$', "Must be 10 character Amazon ASIN"]}
+      - {label: "Price Range", name: "price", widget: "string", required: false}
+      - {label: "Categories", name: "categories", widget: "list", allow_add: true}
+      - {label: "Product Image", name: "image", widget: "image", required: false}
+      - {label: "Priority", name: "priority", widget: "number", default: 1, min: 1, max: 10}
 
+  # Site Settings
   - name: "settings"
-    label: "Site Settings"
+    label: "⚙️ Site Settings"
     files:
-      - file: "_data/contact.yml"
-        label: "Contact Information"
-        name: "contact"
-        fields:
-          - {label: "Email", name: "email", widget: "string", default: "canieatit01@gmail.com"}
-          - {label: "Support Email", name: "support_email", widget: "string", default: "canieatit01@gmail.com"}
-          - {label: "Partnership Email", name: "partnership_email", widget: "string", default: "canieatit01@gmail.com"}
-      - file: "_data/settings.yml"
-        label: "General Settings"
+      - label: "General Settings"
         name: "general"
+        file: "_data/settings.yml"
         fields:
-          - {label: "Amazon Affiliate ID", name: "amazon_affiliate_id", widget: "string", default: "canieatit06-20"}
+          - {label: "Site Title", name: "title", widget: "string"}
+          - {label: "Site Description", name: "description", widget: "text"}
+          - {label: "Contact Email", name: "email", widget: "string"}
+          - {label: "Amazon Affiliate ID", name: "amazon_affiliate_id", widget: "string"}
           - {label: "Google Analytics ID", name: "google_analytics", widget: "string", required: false}
-          - {label: "MailerLite Group ID", name: "mailerlite_group", widget: "string", default: "159030036571096614"}
+          
+      - label: "AdSense Settings"
+        name: "adsense"
+        file: "_data/adsense.yml"
+        fields:
+          - {label: "Publisher ID", name: "publisher_id", widget: "string"}
+          - {label: "Header Ad Slot", name: "header_ad_slot", widget: "string"}
+          - {label: "Sidebar Ad Slot", name: "sidebar_ad_slot", widget: "string"}
+          - {label: "Footer Ad Slot", name: "footer_ad_slot", widget: "string"}
+          
+      - label: "MailerLite Settings"
+        name: "mailerlite"
+        file: "_data/mailerlite.yml"
+        fields:
+          - {label: "Form ID", name: "form_id", widget: "string"}
+          - {label: "API Key", name: "api_key", widget: "string", hint: "Keep this secure!"}
+          - {label: "Lead Magnet Title", name: "lead_magnet_title", widget: "string", default: "FREE Food Safety Cheat Sheet"}
+          - {label: "Lead Magnet Description", name: "lead_magnet_description", widget: "text"}  
