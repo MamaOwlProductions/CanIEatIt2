@@ -3,10 +3,111 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Can I Eat It - Admin</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <title>Can I Eat It? - Content Manager</title>
+  <style>
+    body { 
+      font-family: system-ui, -apple-system, sans-serif; 
+      background: linear-gradient(135deg, #059669, #7c3aed);
+      margin: 0;
+      padding: 20px;
+    }
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50vh;
+      color: white;
+      font-size: 1.2rem;
+    }
+    .logo {
+      text-align: center;
+      color: white;
+      margin-bottom: 2rem;
+    }
+    .logo h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+    .logo p {
+      opacity: 0.9;
+      margin: 0.5rem 0 0 0;
+    }
+  </style>
 </head>
 <body>
+  <div class="logo">
+    <h1>🍎 Can I Eat It? Admin</h1>
+    <p>Content Management System</p>
+  </div>
+  
+  <div class="loading" id="loading">
+    <div>Loading admin panel... 📝</div>
+  </div>
+  
+  <script>
+    // Custom preview styles for the CMS
+    window.CMS_MANUAL_INIT = true;
+    
+    // Configuration for better UX
+    window.netlifyIdentity = {
+      settings: {
+        autoConfirm: true
+      }
+    };
+  </script>
+  
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  
+  <script>
+    // Initialize CMS with custom config
+    CMS.init({
+      config: {
+        load_config_file: true,
+        media_folder: '/assets/images/uploads',
+        public_folder: '/assets/images/uploads'
+      }
+    });
+    
+    // Hide loading message when CMS loads
+    CMS.registerEventListener({
+      name: 'login',
+      handler: () => {
+        document.getElementById('loading').style.display = 'none';
+      }
+    });
+    
+    // Custom preview templates for better editing experience
+    CMS.registerPreviewTemplate('blog', ({ entry, widgetFor, widgetsFor }) => {
+      return `
+        <div style="max-width: 800px; margin: 0 auto; padding: 2rem; font-family: system-ui;">
+          <h1 style="color: #059669; font-size: 2.5rem; margin-bottom: 1rem;">
+            ${entry.getIn(['data', 'title'], '')}
+          </h1>
+          <div style="color: #666; margin-bottom: 2rem; display: flex; gap: 1rem;">
+            <span>📅 ${entry.getIn(['data', 'date'], '').split('T')[0]}</span>
+            <span>👤 ${entry.getIn(['data', 'author'], '')}</span>
+            <span style="background: #7c3aed; color: white; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem;">
+              ${entry.getIn(['data', 'category'], '')}
+            </span>
+          </div>
+          <div style="line-height: 1.6; color: #333;">
+            ${widgetFor('body')}
+          </div>
+        </div>
+      `;
+    });
+    
+    // Handle Netlify Identity
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
