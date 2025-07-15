@@ -1,10 +1,13 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3"
+# Use GitHub Pages gem which has stable dependencies
+gem "github-pages", "~> 228", group: :jekyll_plugins
+
+# Only add what we absolutely need
 gem "webrick", "~> 1.7"
 
-group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-sitemap"  
-  gem "jekyll-seo-tag"
+# Platform-specific
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo", ">= 1", "< 3"
+  gem "tzinfo-data"
 end
