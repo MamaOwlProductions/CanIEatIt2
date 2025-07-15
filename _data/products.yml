@@ -1,16 +1,1 @@
-products:
-  - rating: 4.5/5
-    price: "30.59"
-    active: true
-    image_url: https://m.media-amazon.com/images/I/916z7AG53dL._AC_SX679_.jpg
-    affiliate_url: https://amzn.to/40bDk4S
-    title: Vtopmart 14 PCS Airtight Food Storage Containers Set, BPA Free Plastic
-      Kitchen Pantry Organizer
-    description: Help Organize your kitchen and pantry -- Imagine waking up every
-      morning, going to the kitchen to make some breakfast, now that everything
-      in your pantry is neatly organized and no longer cluttered, you can have
-      everything you want in no time, organizing makes life better and simpler!
-    category:
-      - storage
-      - containers
-      - preservation
+
