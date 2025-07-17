@@ -6,7 +6,7 @@ media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
 collections:
-  # Blog Posts Management
+  # Blog Posts
   - name: "blog"
     label: "📝 Blog Posts"
     folder: "_posts"
@@ -18,77 +18,41 @@ collections:
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Author", name: "author", widget: "string", default: "Food Safety Expert"}
       - {label: "Category", name: "category", widget: "select", options: ["food-safety", "storage", "cooking", "seasonal", "news"]}
-      - {label: "Tags", name: "tags", widget: "list", allow_add: true}
-      - {label: "Featured Image", name: "image", widget: "image", required: false}
-      - {label: "Excerpt", name: "excerpt", widget: "text", hint: "Brief description for previews"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Excerpt", name: "excerpt", widget: "text", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "SEO Description", name: "description", widget: "text", required: false}
 
-  # Pages Management  
-  - name: "pages"
-    label: "📄 Pages"
-    files:
-      - label: "About Page"
-        name: "about"
-        file: "about.md"
-        fields:
-          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Description", name: "description", widget: "text"}
-          - {label: "Body", name: "body", widget: "markdown"}
-      
-      - label: "Homepage"
-        name: "index"
-        file: "index.md"
-        fields:
-          - {label: "Layout", name: "layout", widget: "hidden", default: "home"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Hero Title", name: "hero_title", widget: "string"}
-          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text"}
-          - {label: "Featured Questions", name: "featured_questions", widget: "list", allow_add: true}
-
-  # Food Safety Questions Database
-  - name: "questions"
-    label: "❓ Food Safety Questions"
-    folder: "_questions"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Question", name: "title", widget: "string"}
-      - {label: "Answer", name: "answer", widget: "text"}
-      - {label: "Category", name: "category", widget: "select", options: ["storage", "cooking", "leftovers", "meat", "dairy", "produce", "seafood", "contamination", "frozen", "canned", "grains", "expiration", "pregnancy"]}
-      - {label: "Source", name: "source", widget: "select", options: ["USDA", "FDA", "CDC", "USDA Food Safety and Inspection Service"]}
-      - {label: "Related Products", name: "related_products", widget: "list", required: false}
-
-  # Affiliate Products Management
-  - name: "products"
-    label: "🛒 Affiliate Products"
-    folder: "_products"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Product Name", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Amazon ASIN", name: "asin", widget: "string", pattern: ['^[A-Z0-9]{10}$', "Must be 10 character Amazon ASIN"]}
-      - {label: "Price Range", name: "price", widget: "string", required: false}
-      - {label: "Categories", name: "categories", widget: "list", allow_add: true}
-      - {label: "Product Image", name: "image", widget: "image", required: false}
-      - {label: "Priority", name: "priority", widget: "number", default: 1, min: 1, max: 10}
-
-  # Site Settings
+  # Site Settings (Simple approach)
   - name: "settings"
     label: "⚙️ Site Settings"
     files:
-      - label: "General Settings"
-        name: "general"
-        file: "_data/settings.yml"
+      - label: "Amazon Affiliate Products"
+        name: "affiliate_products"
+        file: "_data/affiliate_products.yml"
         fields:
-          - {label: "Site Title", name: "title", widget: "string"}
-          - {label: "Site Description", name: "description", widget: "text"}
-          - {label: "Contact Email", name: "email", widget: "string"}
-          - {label: "Amazon Affiliate ID", name: "amazon_affiliate_id", widget: "string"}
-          - {label: "Google Analytics ID", name: "google_analytics", widget: "string", required: false}
-          
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            fields:
+              - {label: "Product Name", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Amazon ASIN", name: "asin", widget: "string"}
+              - {label: "Categories", name: "categories", widget: "list"}
+              - {label: "Priority", name: "priority", widget: "number", default: 1, min: 1, max: 10}
+      
+      - label: "Food Safety Questions"
+        name: "food_questions"
+        file: "_data/food_questions.yml"
+        fields:
+          - label: "Questions"
+            name: "questions"
+            widget: "list"
+            fields:
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "text"}
+              - {label: "Category", name: "category", widget: "select", options: ["storage", "cooking", "leftovers", "meat", "dairy", "produce", "seafood", "contamination", "frozen", "canned", "grains", "expiration", "pregnancy"]}
+              - {label: "Source", name: "source", widget: "select", options: ["USDA", "FDA", "CDC", "USDA Food Safety and Inspection Service"]}
+      
       - label: "AdSense Settings"
         name: "adsense"
         file: "_data/adsense.yml"
@@ -97,12 +61,11 @@ collections:
           - {label: "Header Ad Slot", name: "header_ad_slot", widget: "string"}
           - {label: "Sidebar Ad Slot", name: "sidebar_ad_slot", widget: "string"}
           - {label: "Footer Ad Slot", name: "footer_ad_slot", widget: "string"}
-          
+      
       - label: "MailerLite Settings"
         name: "mailerlite"
         file: "_data/mailerlite.yml"
         fields:
           - {label: "Form ID", name: "form_id", widget: "string"}
-          - {label: "API Key", name: "api_key", widget: "string", hint: "Keep this secure!"}
-          - {label: "Lead Magnet Title", name: "lead_magnet_title", widget: "string", default: "FREE Food Safety Cheat Sheet"}
-          - {label: "Lead Magnet Description", name: "lead_magnet_description", widget: "text"}  
+          - {label: "Lead Magnet Title", name: "lead_magnet_title", widget: "string"}
+          - {label: "Lead Magnet Description", name: "lead_magnet_description", widget: "text"}
