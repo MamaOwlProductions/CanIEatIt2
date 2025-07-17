@@ -1,0 +1,10 @@
+questions:
+  - question: "How long can I keep leftover chicken in the refrigerator?"
+    answer: "Leftover cooked chicken can be safely stored in the refrigerator for 3-4 days. Make sure to store it in shallow containers and refrigerate within 2 hours of cooking."
+    category: "leftovers"
+    source: "USDA Food Safety and Inspection Service"
+  
+  - question: "What temperature should I cook ground beef to?"
+    answer: "Ground beef should be cooked to an internal temperature of 160°F (71°C). Use a food thermometer to check the temperature in the thickest part of the meat."
+    category: "cooking"
+    source: "USDA Food Safety and Inspection Service"
