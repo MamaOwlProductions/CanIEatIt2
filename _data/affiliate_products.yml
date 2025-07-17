@@ -1,0 +1,12 @@
+products:
+  - title: "Digital Food Thermometer"
+    description: "Instant-read thermometer for safe cooking temperatures"
+    asin: "B07XNTJZXS"
+    categories: ["cooking", "temperature", "meat"]
+    priority: 1
+  
+  - title: "Food Storage Containers Set"
+    description: "Airtight containers for safe food storage"
+    asin: "B08MKNQ4PQ"
+    categories: ["storage", "leftovers"]
+    priority: 2
