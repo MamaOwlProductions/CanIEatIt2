@@ -1,0 +1,5 @@
+---
+title: Welcome to Can I Eat It?
+date: 2025-07-17T02:54:16.943Z
+---
+Welcome to Can I Eat It? This is a simple place to find the answers to all your food safety questions. Written and researched by a Family and Consumer Science teacher (Home Ec to all my friends from the 90’s) who is passionate about teaching future generations what can and can not be eaten safely without ending up stuck on your bathroom floor for hours fighting through the pains of food poisoning. I hope to save as many as I can from that fate with up to date food recalls from the FDA and good sense with some great easy recipes thrown in for good measure. I can’t wait to meet everyone who will join our ranks passing down the knowledge of generations to keep us all safe and healthy. Welcome and know that I care deeply about this topic and teaching the future generations all the things that I have learned from the many generations that have gone before me. 
