@@ -6,9 +6,8 @@ media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
 collections:
-  # Blog Posts
   - name: "blog"
-    label: "📝 Blog Posts"
+    label: "Blog Posts"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -17,17 +16,13 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Author", name: "author", widget: "string", default: "Food Safety Expert"}
-      - {label: "Category", name: "category", widget: "select", options: ["food-safety", "storage", "cooking", "seasonal", "news"]}
-      - {label: "Tags", name: "tags", widget: "list", required: false}
-      - {label: "Excerpt", name: "excerpt", widget: "text", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  # Site Settings (Simple approach)
-  - name: "settings"
-    label: "⚙️ Site Settings"
+  - name: "affiliate_products"
+    label: "Affiliate Products"
     files:
-      - label: "Amazon Affiliate Products"
-        name: "affiliate_products"
+      - label: "Products List"
+        name: "products"
         file: "_data/affiliate_products.yml"
         fields:
           - label: "Products"
@@ -38,10 +33,13 @@ collections:
               - {label: "Description", name: "description", widget: "text"}
               - {label: "Amazon ASIN", name: "asin", widget: "string"}
               - {label: "Categories", name: "categories", widget: "list"}
-              - {label: "Priority", name: "priority", widget: "number", default: 1, min: 1, max: 10}
-      
-      - label: "Food Safety Questions"
-        name: "food_questions"
+              - {label: "Priority", name: "priority", widget: "number", default: 1}
+
+  - name: "food_questions"
+    label: "Food Questions"
+    files:
+      - label: "Questions List"
+        name: "questions"
         file: "_data/food_questions.yml"
         fields:
           - label: "Questions"
@@ -50,22 +48,5 @@ collections:
             fields:
               - {label: "Question", name: "question", widget: "string"}
               - {label: "Answer", name: "answer", widget: "text"}
-              - {label: "Category", name: "category", widget: "select", options: ["storage", "cooking", "leftovers", "meat", "dairy", "produce", "seafood", "contamination", "frozen", "canned", "grains", "expiration", "pregnancy"]}
-              - {label: "Source", name: "source", widget: "select", options: ["USDA", "FDA", "CDC", "USDA Food Safety and Inspection Service"]}
-      
-      - label: "AdSense Settings"
-        name: "adsense"
-        file: "_data/adsense.yml"
-        fields:
-          - {label: "Publisher ID", name: "publisher_id", widget: "string"}
-          - {label: "Header Ad Slot", name: "header_ad_slot", widget: "string"}
-          - {label: "Sidebar Ad Slot", name: "sidebar_ad_slot", widget: "string"}
-          - {label: "Footer Ad Slot", name: "footer_ad_slot", widget: "string"}
-      
-      - label: "MailerLite Settings"
-        name: "mailerlite"
-        file: "_data/mailerlite.yml"
-        fields:
-          - {label: "Form ID", name: "form_id", widget: "string"}
-          - {label: "Lead Magnet Title", name: "lead_magnet_title", widget: "string"}
-          - {label: "Lead Magnet Description", name: "lead_magnet_description", widget: "text"}
+              - {label: "Category", name: "category", widget: "string"}
+              - {label: "Source", name: "source", widget: "string"}
